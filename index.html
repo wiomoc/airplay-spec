@@ -526,6 +526,8 @@ txt:
       <p>The <code>pw</code> field appears only if the AirPlay server is password protected.
       Otherwise it is not included in the TXT record.</p>
 
+
+      <h3 id="servicediscovery-airplayservice-Features">2.2.1. Features</h2>
       <p>The <code>features</code> bitfield allows the following features to be defined:</p>
 
       <table>
@@ -819,7 +821,7 @@ txt:
       <p>Note that the Apple TV does not support <code>VideoVolumeControl</code>. It has
       probably been introduced for the upcoming Apple television.</p>
 
-      <h3 id="servicediscovery-airplayservice-MetadataFeatures">2.2.1. MetadataFeatures</h2>
+      <h3 id="servicediscovery-airplayservice-MetadataFeatures">2.2.2. MetadataFeatures</h2>
       <p class="caption">MetadataFeatures</p>
       <pre><code>
 bit 17 = bit 0
@@ -832,7 +834,7 @@ is apple tv or home pod of certain version = bit 6
 </code></pre>
 
 
-      <h3 id="servicediscovery-airplayservice-SupportedAudioFormats">2.2.2. SupportedAudioFormats</h2>
+      <h3 id="servicediscovery-airplayservice-SupportedAudioFormats">2.2.3. SupportedAudioFormats</h2>
       <p class="caption">SupportedAudioFormats</p>
 <pre><code>
                        24   20   16   12    8    4    0
@@ -843,8 +845,8 @@ bit 21 = 0x1000000 = 0001 0000 0000 0000 0000 0000 0000
 </code></pre>
 
 
-<h3 id="servicediscovery-airplayservice-Subtype">2.2.3. Subtype</h2>
-<p class="caption">Subtype</p>
+      <h3 id="servicediscovery-airplayservice-Subtype">2.2.4. Subtype</h2>
+      <p class="caption">Subtype</p>
 <pre><code>
 AppleTV = deviceModel has prefix “AppleTV”
 HomePod = deviceModel has prefix “AudioAccessory”
@@ -853,6 +855,7 @@ Unknown = otherwise
 </code></pre>
 
 
+      <h3 id="servicediscovery-airplayservice-Subtype">2.2.5. System Flags</h2>
       <p>The <code>flags</code> bitfield allows the following flags to be defined:</p>
 
       <table>
@@ -974,13 +977,62 @@ Unknown = otherwise
       </tbody>
       </table>
 
-      <h3 id="servicediscovery-airplayservice-CanBeRemoteControlled">2.2.4. CanBeRemoteControlled</h2>
-      <p class="caption">CanBeRemoteControlled</p>
+      <h3 id="servicediscovery-airplayservice-CanBeRemoteControlled">2.2.6. CanBeRemoteControlled</h2>
       <p><code>SupportsBufferedAudio</code> is set and <code>PINRequired</code> is not set</p>
 
+      <h3 id="servicediscovery-airplayservice-StateChanges">2.2.7. State Changes</h2>
+      <p>Depending on the state of the device the mDNS record is changed to
+        reflect this. Primarily it is the <code>flags</code>, <code>gid</code>,
+        <code>igl</code>, <code>gcgl</code>, <code>pgid</code> and
+        <code>pgcgl</code> fields that are changed.</p>
 
-      <p>The AirPlay server is a <em>HTTP</em> server (<a href="http://www.ietf.org/rfc/rfc2616.txt">RFC 2616</a>). Two connections are
-      made to this server, the second one being used as a <a href="http://tools.ietf.org/id/draft-lentczner-rhttp-00.txt">reverse HTTP</a>
+      <p class="caption">Apple TV not playing</p>
+      <pre><code>flags=0x10644
+gid=712F0759-5D44-41E7-AB67-FAB0AD39E165
+igl=1
+gcgl=1
+</code></pre>
+
+      <p class="caption">Apple TV receiving AirPlay audio</p>
+      <pre><code>flags=0x30e44
+gid=19F5D4B2-8A06-4792-923E-8AFA83913238
+igl=0
+gcgl=0
+pgid=19F5D4B2-8A06-4792-923E-8AFA83913238
+pgcgl=0
+</code></pre>
+
+      <p class="caption">Apple TV receiving AirPlay video</p>
+      <pre><code>flags=0x30e44
+gid=19F5D4B2-8A06-4792-923E-8AFA83913238
+igl=0
+gcgl=0
+pgid=19F5D4B2-8A06-4792-923E-8AFA83913238
+pgcgl=0
+</code></pre>
+
+
+      <p class="caption">Apple TV receiving AirPlay screen</p>
+      <pre><code>flags=0x30644
+gid=712F0759-5D44-41E7-AB67-FAB0AD39E165
+igl=1
+gcgl=1
+</code></pre>
+
+      <p class="caption">Apple TV playing local media</p>
+      <pre><code>flags=0x10644
+gid=FA69F5A2-5574-4E4D-A676-CA7F61A904A3
+igl=1
+gcgl=1
+</code></pre>
+
+
+      <h3 id="servicediscovery-airplayservice-Protocol">2.2.8. Protocol</h2>
+
+      <p>The AirPlay server is both a <em>RTSP</em> server (<a href="http://www.ietf.org/rfc/rfc2326.txt">RFC 2326</a>)
+      and a <em>HTTP</em> server (<a href="http://www.ietf.org/rfc/rfc2616.txt">RFC 2616</a>).
+      Two connections are made to this server, the second one being used as a
+      <a href="http://tools.ietf.org/id/draft-lentczner-rhttp-00.txt">reverse HTTP</a>
       connection. This allows a client to receive asynchronous events, such
       as playback status changes, from a server.</p>
 
