@@ -497,7 +497,7 @@ txt:
             <option value="0x4A7FFFF7,0x4155FDE">4K Apple TV</option>
             <option value="0x4A7FCA00,0x4156BD0">HomePod</option>
             <option value="0x445D0A00,  0x1C340">Airport Express</option>
-            <option value="0x445F8A00,  0x1C340">Denon AVR3000</option>
+            <option value="0x445F8A00,  0x1C340">Denon AVR-X3500H</option>
             <option value=" 0x4155FDE,      0xE">AirServer</option>
             <option value="0x5A7FFFF7,     0x1E">Airplay</option>
             <option value="0x40180200,    0x300">Required for multi-room audio</option>
@@ -846,112 +846,149 @@ Unknown = otherwise
       <h3 id="servicediscovery-airplayservice-Subtype">2.2.5. System Flags</h3>
       <p>The <code>flags</code> bitfield allows the following flags to be defined:</p>
 
-      <table>
-      <thead>
+      <table id="airplay-system-flags">
+      <tbody id="airplay-system-flags-interactive" class="noscript">
+        <tr>
+        <th colspan="3">
+          Examples:
+          <select id="airplay-system-flags-examples" onchange="systemFlagsExample(this)">
+            <option value="">Custom</option>
+            <option value="0x10644">4K Apple TV Not playing</option>
+            <option value="0x30e44">4K Apple TV receiving AirPlay audio</option>
+            <option value="0x30e44">4K Apple TV receiving AirPlay video</option>
+            <option value="0x30644">4K Apple TV receiving AirPlay screen</option>
+            <option value="0x10644">4K Apple TV playing local media</option>
+            <option value="0x3ac04">HomePod Slave</option>
+            <option value="0x18404">HomePod Group Leader</option>
+            <option value="0x4">Airport Express</option>
+            <option value="0x4">Denon AVR-X3500H</option>
+            <option value="0x804">Denon AVR-X3500H Playing Audio</option>
+            <option value="0x4">AirServer</option>
+            <option value="0x4">Airplay</option>
+          </select>
+          <input type="text" id="airplay-system-flags-input" onkeyup="systemFlagsChanged(this)" onpaste="systemFlagsChanged(this)">
+        </th>
+        <tr>
+      </tbody>
+      <tbody id="airplay-system-flags-output" class="noscript">
+        <tr>
+         <td colspan="3">
+             Decimal:
+             <span id="airplay-system-flags-dec"></span>
+        </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+             Hex:
+             <span id="airplay-system-flags-hex"></span>
+          </td>
+        </tr>
+      </tbody>
+      <tbody>
       <tr>
        <th>bit</th>
        <th>name</th>
        <th>description</th>
       </tr>
-      </thead>
+      </tbody>
 
       <tbody>
-      <tr>
+      <tr id="airplay-system-flags-bit0">
        <td>0</td>
        <td>???</td>
        <td>Not seen set anywhere</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit1">
        <td>1</td>
        <td>???</td>
        <td>Not seen set anywhere</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit2">
        <td>2</td>
        <td>???</td>
        <td>Seen on AppleTV, Denon AVR, HomePod, Airport Express</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit3">
        <td>3</td>
        <td><code>PINRequired</code></td>
        <td></td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit4">
        <td>4</td>
        <td>???</td>
        <td>Not seen set anywhere</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit5">
        <td>5</td>
        <td>???</td>
        <td>Not seen set anywhere</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit6">
        <td>6</td>
        <td><code>SupportsAirPlayFromCloud</code></td>
        <td></td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit7">
        <td>7</td>
        <td><code>PasswordRequired</code></td>
        <td></td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit8">
        <td>8</td>
        <td>???</td>
        <td>Not seen set anywhere</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit9">
        <td>9</td>
        <td><code>OneTimePairingRequired</code></td>
        <td></td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit10">
        <td>10</td>
        <td><code>DeviceWasSetupForHKAccessControl</code></td>
        <td></td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit11">
        <td>11</td>
        <td><code>DeviceSupportsRelay</code></td>
        <td>Shows in logs as relayable. When set iOS will connect to the device to get currently playing track.</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit12">
        <td>12</td>
        <td><code>SilentPrimary</code></td>
        <td></td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit13">
        <td>13</td>
        <td><code>TightSyncIsGroupLeader</code></td>
        <td></td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit14">
        <td>14</td>
        <td><code>TightSyncBuddyNotReachable</code></td>
        <td></td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit15">
        <td>15</td>
        <td><code>IsAppleMusicSubscriber</code></td>
        <td>Shows in logs as music</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit16">
        <td>16</td>
        <td><code>CloudLibraryIsOn</code></td>
        <td>Shows in logs as iCML</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit17">
        <td>17</td>
        <td><code>ReceiverSessionIsActive</code></td>
        <td>Shows in logs as airplay-receiving. Set when Apple TV is receiving anything via AirPlay.</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit18">
        <td>18</td>
        <td>???</td>
        <td>Not seen set anywhere</td>
       </tr>
-      <tr>
+      <tr id="airplay-system-flags-bit19">
        <td>19</td>
        <td>???</td>
        <td>Not seen set anywhere</td>

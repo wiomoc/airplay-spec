@@ -55,5 +55,32 @@ function updateFeatures(featuresS) {
     ",0x" + features.shiftRight(32).toString(16);
   document.getElementById("airplay-features-txt").innerHTML = txt;
 }
+
+function systemFlagsExample(el) {
+  document.getElementById("airplay-system-flags-input").value = el.value;
+  updateSystemFlags(el.value);
+}
+function systemFlagsChanged(el) {
+  document.getElementById("airplay-system-flags-examples").value = "";
+  updateSystemFlags(el.value);
+}
+
+function updateSystemFlags(systemFlagsS) {
+  var systemFlags = 0;
+  systemFlags = toLong(systemFlagsS);
+  if (systemFlags.equals(Long.ZERO)) {
+    document.getElementById("airplay-system-flags-output").className = "noscript";
+    setBitClassName("airplay-system-flags", Long.ZERO, "", "")
+  } else {
+    document.getElementById("airplay-system-flags-output").className = "";
+    setBitClassName("airplay-system-flags", systemFlags, "selected", "notSelected")
+  }
+
+  document.getElementById("airplay-system-flags-dec").innerHTML = systemFlags.toString(10);
+  document.getElementById("airplay-system-flags-hex").innerHTML = "0x" + systemFlags.toString(16);
+}
+
 featuresChanged(document.getElementById("airplay-features-input"));
+systemFlagsChanged(document.getElementById("airplay-system-flags-input"));
 document.getElementById("airplay-features-interactive").className = "";
+document.getElementById("airplay-system-flags-interactive").className = "";
