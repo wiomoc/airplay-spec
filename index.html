@@ -46,12 +46,20 @@
           <li><a href="#screenmirroring-timesynchronization">6.3. Time Synchronization</a></li>
         </ul></li>
         <li><a href="#passwordprotection">7. Password Protection</a></li>
-        <li><a href="#history">8. History</a></li>
-        <li><a href="#resources">9. Resources</a></li>
+        <li><a href="#contributing">8. Contributing</a></li>
         <li><ul>
-          <li><a href="#resources-ietfrfcs">9.1. IETF RFCs</a></li>
-          <li><a href="#resources-ietfdrafts">9.2. IETF drafts</a></li>
-          <li><a href="#resources-appleprotocols">9.3. Apple Protocols</a></li>
+          <li><a href="#contributing">8.1. Device Data</a></li>
+          <li><ul>
+            <li><a href="#contributing">8.1.1. Linux</a></li>
+            <li><a href="#contributing">8.1.2. macOS</a></li>
+          </ul></li>
+        </ul></li>
+        <li><a href="#history">9. History</a></li>
+        <li><a href="#resources">10. Resources</a></li>
+        <li><ul>
+          <li><a href="#resources-ietfrfcs">10.1. IETF RFCs</a></li>
+          <li><a href="#resources-ietfdrafts">10.2. IETF drafts</a></li>
+          <li><a href="#resources-appleprotocols">10.3. Apple Protocols</a></li>
         </ul></li>
       </ul>
 
@@ -3702,7 +3710,76 @@ Date: Fri, 09 Mar 2012 15:50:40 GMT
 Content-Length: 0
 </code></pre>
 
-      <h1 id="history">8. History</h1>
+      <h1 id="contributing">8. Contributing</h1>
+
+      <h2 id="contributing-data">8.1. Device Data</h2>
+
+      <p>
+        If anybody wants to help out who has some Airplay compatible hardware we
+        can always use some more data. Primarily we right now need mDNS records
+        and the results from RTSP <code>GET /info/</code> requests. If you have
+        a computer other than a windows machine I have written some short guides
+        below and if that is not enough I can probably help you if you send
+        an e-mail to <a href="brian@maven-group.org">brian@maven-group.org</a>.
+      </p>
+      <p>
+        We right now have data for a couple of 4K Apple TVs, an AirPort Express,
+        two stereo paired HomePods, the Libretone LTH200 and a Denon AVR-X3500X
+        surround receiver so if your hardware is something else I am especially
+        interested in the data from it.
+      </p>
+
+      <p>
+        Any data that you send will only be viewed by me and I will change stuff
+        like device names, ip addresses, MAC addresses, serial numbers and UUIDs
+        before including the data in this spec.
+      </p>
+
+      <h3 id="contributing-data-linux">8.1.1. Linux</h3>
+
+      <p>If you are on Linux and have <code>avahi</code> installed you can run the following
+        shell script to gather all the data.</p>
+
+      <p class="caption">capture-data.sh</p>
+      <pre><code>#!/bin/bash
+avahi-browse -prt _airplay._tcp | awk -v "FS=;" '{ print $7 }' | sed '/^\s*$/d' > devices.txt
+avahi-browse -aprt | grep -f devices.txt > mDNS.txt
+for item in $(avahi-browse -pt _airplay._tcp | awk -v "FS=;" '{print $4}') ; do
+  PORT="$(avahi-browse -prt _airplay._tcp | grep ";$item;" | awk -v "FS=;" '{print $9}' | sed '/^\s*$/d')"
+  HOST="$(avahi-browse -prt _airplay._tcp | grep ";$item;" | awk -v "FS=;" '{print $7}' | sed '/^\s*$/d')"
+  curl https://griff.github.io/airplay-spec/RTSP-get-info-req.bin | nc "$HOST" $PORT > "RTSP-get-info-res-$item.bin"
+done
+tar czvf device-data.tar.gz mDNS.txt RTSP-get-info-res*
+</code></pre>
+
+      <p>Then you can send the resulting file <code>device-data.tar.gz</code>
+        as an e-mail to <a href="mailto:brian@maven-group.org">brian@maven-group.org</a></p>
+
+      <h3 id="contributing-data-macos">8.1.2. macOS</h3>
+
+      <p>
+        To find mDNS records on macOS I usually use the free <a href="https://itunes.apple.com/dk/app/discovery-dns-sd-browser/id1381004916?mt=12">Discovery</a>.
+        From there you can find all the devices that publish a <code>_airplay._tcp</code>
+        service, select and copy/paste the results into an e-mail. It is also
+        relevant if you can find what other services those devices publish and
+        include the service records for those services.
+      </p>
+
+      <p>
+        To get the RTSP <code>GET /info</code> results you will need the ip
+        address and port number your devices use for <code>_airplay._tcp</code>
+        and in the command below replace <code>[ip address]</code>,
+        <code>[port]</code> and <code>[device name]</code> with the correct values.
+      </p>
+
+      <pre><code>curl https://griff.github.io/airplay-spec/RTSP-get-info-req.bin | nc [ip address] [port] > RTSP-get-info-res-[device name].bin</code></pre>
+
+      <p>
+        Then you can send the mDNS records and <code>RTSP-get-info-res-[device name].bin</code>
+        files in an e-mail to <a href="mailto:brian@maven-group.org">brian@maven-group.org</a>
+      </p>
+
+      <h1 id="history">9. History</h1>
       <table>
       <thead>
       <tr>
@@ -3727,9 +3804,13 @@ Content-Length: 0
        <td>2019&#8211;05&#8211;01</td>
        <td>Added data for Libretone</td>
       </tr>
+      <tr>
+       <td>2019&#8211;05&#8211;01</td>
+       <td>Add contributing section</td>
+      </tr>
       </table>
-      <h1 id="resources">9. Resources</h1>
-      <h2 id="resources-ietfrfcs">9.1. IETF RFCs</h2>
+      <h1 id="resources">10. Resources</h1>
+      <h2 id="resources-ietfrfcs">10.1. IETF RFCs</h2>
       <ul>
       <li><a href="http://www.ietf.org/rfc/rfc2616.txt">RFC 2616</a>: Hypertext Transfer Protocol &#8211; HTTP/1.1</li>
       <li><a href="http://www.ietf.org/rfc/rfc2617.txt">RFC 2617</a>: HTTP Authentication: Basic and Digest Access Authentication</li>
@@ -3740,7 +3821,7 @@ Content-Length: 0
       <li><a href="http://www.ietf.org/rfc/rfc4648.txt">RFC 4648</a>: The Base16, Base32, and Base64 Data Encodings</li>
       </ul>
 
-      <h2 id="resources-ietfdrafts">9.2. IETF drafts</h2>
+      <h2 id="resources-ietfdrafts">10.2. IETF drafts</h2>
       <ul>
       <li><a href="http://www.ietf.org/id/draft-cheshire-dnsext-multicastdns-15.txt">Multicast DNS</a></li>
       <li><a href="http://www.ietf.org/id/draft-cheshire-dnsext-dns-sd-11.txt">DNS-Based Service Discovery</a></li>
@@ -3756,7 +3837,7 @@ Content-Length: 0
       </ul>
       <div id="footer">
         &copy; 2012 <a href="mailto:clement.vasseur@gmail.com">Clément Vasseur</a>.
-        &copy; 2019 Brian Olsen.
+        &copy; 2019 <a href="mailto:brian@maven-group.org">Brian Olsen</a>.
         Last update: 2019-05-01.
       </div>
     </div>
