@@ -3744,10 +3744,9 @@ Content-Length: 0
       <pre><code>#!/bin/bash
 avahi-browse -prt _airplay._tcp | awk -v "FS=;" '{ print $7 }' | sed '/^\s*$/d' > devices.txt
 avahi-browse -aprt | grep -f devices.txt > mDNS.txt
-for item in $(avahi-browse -pt _airplay._tcp | awk -v "FS=;" '{print $4}') ; do
-  PORT="$(avahi-browse -prt _airplay._tcp | grep ";$item;" | awk -v "FS=;" '{print $9}' | sed '/^\s*$/d')"
-  HOST="$(avahi-browse -prt _airplay._tcp | grep ";$item;" | awk -v "FS=;" '{print $7}' | sed '/^\s*$/d')"
-  curl https://griff.github.io/airplay-spec/RTSP-get-info-req.bin | nc "$HOST" $PORT > "RTSP-get-info-res-$item.bin"
+for host in $(cat devices.txt) ; do
+  PORT="$(avahi-browse -prt _airplay._tcp | grep ";$host;" | awk -v "FS=;" '{print $9}' | sed '/^\s*$/d')"
+  curl https://griff.github.io/airplay-spec/RTSP-get-info-req.bin | nc -w 2 "$host" $PORT > "RTSP-get-info-res-$host.bin"
 done
 tar czvf device-data.tar.gz mDNS.txt RTSP-get-info-res*
 </code></pre>
@@ -3772,7 +3771,7 @@ tar czvf device-data.tar.gz mDNS.txt RTSP-get-info-res*
         <code>[port]</code> and <code>[device name]</code> with the correct values.
       </p>
 
-      <pre><code>curl https://griff.github.io/airplay-spec/RTSP-get-info-req.bin | nc [ip address] [port] > RTSP-get-info-res-[device name].bin</code></pre>
+      <pre><code>curl https://griff.github.io/airplay-spec/RTSP-get-info-req.bin | nc -w 2 [ip address] [port] > RTSP-get-info-res-[device name].bin</code></pre>
 
       <p>
         Then you can send the mDNS records and <code>RTSP-get-info-res-[device name].bin</code>
