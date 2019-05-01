@@ -170,6 +170,7 @@ table th {
 
 table td, table th {
 	padding: 5px 5px;
+	text-align: left;
 }
 
 table tr {
@@ -178,6 +179,10 @@ table tr {
 
 table tr:hover {
 	background-color: #e4f2fc;
+}
+
+table tr.selected {
+	background-color: #75bdf0;
 }
 
 table td {
@@ -197,4 +202,8 @@ table td {
 	font-size: 80%;
 	border-top: 3px solid #09598a;
 	padding-top: 10px;
+}
+
+.noscript {
+	display: none;
 }

@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta http-equiv="Content-language" content="en"/>
@@ -8,20 +7,6 @@
     <meta name="author" content="Clément Vasseur"/>
     <title>Unofficial AirPlay Protocol Specification</title>
     <link rel="stylesheet" type="text/css" href="AirPlay.css"/>
-    <script type="text/javascript">
-    /*
-
-           ____________________________
-          ( Stay hungry. Stay foolish. )
-           ----------------------------
-                  \   ^__^
-                   \  (oo)\_______
-                      (__)\       )\/\
-                          ||----w |
-                          ||     ||
-
-    */
-    </script>
   </head>
   <body>
     <div id="content">
@@ -153,180 +138,159 @@ txt:
       <p>The following fields appear in the TXT record:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">name</th>
-       <th style="text-align:left;">value</th>
-       <th style="text-align:left;">description</th>
+       <th>name</th>
+       <th>value</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>txtvers</code></td>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">TXT record version 1</td>
+       <td><code>txtvers</code></td>
+       <td>1</td>
+       <td>TXT record version 1</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>ch</code></td>
-       <td style="text-align:left;">2</td>
-       <td style="text-align:left;">audio channels: stereo</td>
+       <td><code>ch</code></td>
+       <td>2</td>
+       <td>audio channels: stereo</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>cn</code></td>
-       <td style="text-align:left;">0,1,2,3</td>
-       <td style="text-align:left;">audio codecs</td>
+       <td><code>cn</code></td>
+       <td>0,1,2,3</td>
+       <td>audio codecs</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>et</code></td>
-       <td style="text-align:left;">0,3,5</td>
-       <td style="text-align:left;">supported encryption types</td>
+       <td><code>et</code></td>
+       <td>0,3,5</td>
+       <td>supported encryption types</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>md</code></td>
-       <td style="text-align:left;">0,1,2</td>
-       <td style="text-align:left;">supported metadata types</td>
+       <td><code>md</code></td>
+       <td>0,1,2</td>
+       <td>supported metadata types</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>pw</code></td>
-       <td style="text-align:left;">false</td>
-       <td style="text-align:left;">does the speaker require a password?</td>
+       <td><code>pw</code></td>
+       <td>false</td>
+       <td>does the speaker require a password?</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>sr</code></td>
-       <td style="text-align:left;">44100</td>
-       <td style="text-align:left;">audio sample rate: 44100 Hz</td>
+       <td><code>sr</code></td>
+       <td>44100</td>
+       <td>audio sample rate: 44100 Hz</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>ss</code></td>
-       <td style="text-align:left;">16</td>
-       <td style="text-align:left;">audio sample size: 16-bit</td>
+       <td><code>ss</code></td>
+       <td>16</td>
+       <td>audio sample size: 16-bit</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>tp</code></td>
-       <td style="text-align:left;">UDP</td>
-       <td style="text-align:left;">supported transport: TCP or UDP</td>
+       <td><code>tp</code></td>
+       <td>UDP</td>
+       <td>supported transport: TCP or UDP</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>vs</code></td>
-       <td style="text-align:left;">130.14</td>
-       <td style="text-align:left;">server version 130.14</td>
+       <td><code>vs</code></td>
+       <td>130.14</td>
+       <td>server version 130.14</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>am</code></td>
-       <td style="text-align:left;">AppleTV2,1</td>
-       <td style="text-align:left;">device model</td>
+       <td><code>am</code></td>
+       <td>AppleTV2,1</td>
+       <td>device model</td>
       </tr>
       </tbody>
       </table>
+
       <h3>Audio codecs</h3>
-
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">cn</th>
-       <th style="text-align:left;">description</th>
+       <th>cn</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">0</td>
-       <td style="text-align:left;">PCM</td>
+       <td>0</td>
+       <td>PCM</td>
       </tr>
       <tr>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">Apple Lossless (ALAC)</td>
+       <td>1</td>
+       <td>Apple Lossless (ALAC)</td>
       </tr>
       <tr>
-       <td style="text-align:left;">2</td>
-       <td style="text-align:left;">AAC</td>
+       <td>2</td>
+       <td>AAC</td>
       </tr>
       <tr>
-       <td style="text-align:left;">3</td>
-       <td style="text-align:left;">AAC ELD (Enhanced Low Delay)</td>
+       <td>3</td>
+       <td>AAC ELD (Enhanced Low Delay)</td>
       </tr>
       </tbody>
       </table>
+
       <h3>Encryption Types</h3>
-
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">et</th>
-       <th style="text-align:left;">description</th>
+       <th>et</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">0</td>
-       <td style="text-align:left;">no encryption</td>
+       <td>0</td>
+       <td>no encryption</td>
       </tr>
       <tr>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">RSA (AirPort Express)</td>
+       <td>1</td>
+       <td>RSA (AirPort Express)</td>
       </tr>
       <tr>
-       <td style="text-align:left;">3</td>
-       <td style="text-align:left;">FairPlay</td>
+       <td>3</td>
+       <td>FairPlay</td>
       </tr>
       <tr>
-       <td style="text-align:left;">4</td>
-       <td style="text-align:left;">MFiSAP (3rd-party devices)</td>
+       <td>4</td>
+       <td>MFiSAP (3rd-party devices)</td>
       </tr>
       <tr>
-       <td style="text-align:left;">5</td>
-       <td style="text-align:left;">FairPlay SAPv2.5</td>
+       <td>5</td>
+       <td>FairPlay SAPv2.5</td>
       </tr>
       </tbody>
       </table>
+
       <h3>Metadata Types</h3>
-
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">md</th>
-       <th style="text-align:left;">description</th>
+       <th>md</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;">0</td>
-       <td style="text-align:left;">text</td>
+       <td>0</td>
+       <td>text</td>
       </tr>
       <tr>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">artwork</td>
+       <td>1</td>
+       <td>artwork</td>
       </tr>
       <tr>
-       <td style="text-align:left;">2</td>
-       <td style="text-align:left;">progress</td>
+       <td>2</td>
+       <td>progress</td>
       </tr>
       </tbody>
       </table>
+
+
       <h2 id="servicediscovery-airplayservice">2.2. AirPlay Service</h2>
       <p class="caption">AirPlay service</p>
 
@@ -343,64 +307,57 @@ txt:
       <p>The following fields are available in the TXT record:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">name</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">value</th>
-       <th style="text-align:left;">description</th>
+       <th>name</th>
+       <th>type</th>
+       <th>value</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>model</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">AppleTV2,1</td>
-       <td style="text-align:left;">device model</td>
+       <td><code>model</code></td>
+       <td>string</td>
+       <td>AppleTV2,1</td>
+       <td>device model</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>manufacturer</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">Sound United</td>
-       <td style="text-align:left;">device manufacturer</td>
+       <td><code>manufacturer</code></td>
+       <td>string</td>
+       <td>Sound United</td>
+       <td>device manufacturer</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>serialNumber</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">LFKSDKERWER</td>
-       <td style="text-align:left;">device serial number</td>
+       <td><code>serialNumber</code></td>
+       <td>string</td>
+       <td>LFKSDKERWER</td>
+       <td>device serial number</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>fv</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">p20.1.505.140</td>
-       <td style="text-align:left;">device firmware version</td>
+       <td><code>fv</code></td>
+       <td>string</td>
+       <td>p20.1.505.140</td>
+       <td>device firmware version</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>osvers</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">12.2.1</td>
-       <td style="text-align:left;">device OS version</td>
+       <td><code>osvers</code></td>
+       <td>string</td>
+       <td>12.2.1</td>
+       <td>device OS version</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>deviceid</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">58:55:CA:1A:E2:88</td>
-       <td style="text-align:left;">Device ID. Usually MAC address of the device</td>
+       <td><code>deviceid</code></td>
+       <td>string</td>
+       <td>58:55:CA:1A:E2:88</td>
+       <td>Device ID. Usually MAC address of the device</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>features</code></td>
-       <td style="text-align:left;">32 bit hex number,optional high order 32 bit hex number</td>
-       <td style="text-align:left;">0x39f7,0xE</td>
-       <td style="text-align:left;">
+       <td><code>features</code></td>
+       <td>32 bit hex number,optional high order 32 bit hex number</td>
+       <td>0x39f7,0xE</td>
+       <td>
          bitfield of supported features. This was originally a 32 bit value but
          it has since been expanded to a 64 bit value. To support both these
          types the mDNS value is encoded as two 32 bit values separated by comma
@@ -408,118 +365,118 @@ txt:
        </td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>pw</code></td>
-       <td style="text-align:left;">boolean</td>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">server is password protected</td>
+       <td><code>pw</code></td>
+       <td>boolean</td>
+       <td>1</td>
+       <td>server is password protected</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>acl</code></td>
-       <td style="text-align:left;">int64</td>
-       <td style="text-align:left;">0</td>
-       <td style="text-align:left;">Access control level</td>
+       <td><code>acl</code></td>
+       <td>int64</td>
+       <td>0</td>
+       <td>Access control level</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>srcvers</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">380.10.1</td>
-       <td style="text-align:left;">airplay version</td>
+       <td><code>srcvers</code></td>
+       <td>string</td>
+       <td>380.10.1</td>
+       <td>airplay version</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>flags</code></td>
-       <td style="text-align:left;">20 bit hex number</td>
-       <td style="text-align:left;">0x804</td>
-       <td style="text-align:left;">bitfield of system flags</td>
+       <td><code>flags</code></td>
+       <td>20 bit hex number</td>
+       <td>0x804</td>
+       <td>bitfield of system flags</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>pk</code></td>
-       <td style="text-align:left;">hex string</td>
-       <td style="text-align:left;">b4bf1e47e6aac0b5bb7cf9e2cd0fe5994d4d2f508a5bc6d518856c8842f69c0a</td>
-       <td style="text-align:left;">public key</td>
+       <td><code>pk</code></td>
+       <td>hex string</td>
+       <td>b4bf1e47e6aac0b5bb7cf9e2cd0fe5994d4d2f508a5bc6d518856c8842f69c0a</td>
+       <td>public key</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>pi</code></td>
-       <td style="text-align:left;">UUID string</td>
-       <td style="text-align:left;">f27fd22b-2569-4f65-aa03-1c13dabf49b3</td>
-       <td style="text-align:left;">group_id / PublicCUAirPlayPairingIdentifier</td>
+       <td><code>pi</code></td>
+       <td>UUID string</td>
+       <td>f27fd22b-2569-4f65-aa03-1c13dabf49b3</td>
+       <td>group_id / PublicCUAirPlayPairingIdentifier</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>psi</code></td>
-       <td style="text-align:left;">UUID string</td>
-       <td style="text-align:left;">67AE9DB4-6C03-4FF2-9D22-3E7C7DE94DBA</td>
-       <td style="text-align:left;">PublicCUSystemPairingIdentifier</td>
+       <td><code>psi</code></td>
+       <td>UUID string</td>
+       <td>67AE9DB4-6C03-4FF2-9D22-3E7C7DE94DBA</td>
+       <td>PublicCUSystemPairingIdentifier</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>gid</code></td>
-       <td style="text-align:left;">UUID string</td>
-       <td style="text-align:left;">3008B5C8-9BD3-4479-A564-90BFB3D780C0</td>
-       <td style="text-align:left;">group UUID</td>
+       <td><code>gid</code></td>
+       <td>UUID string</td>
+       <td>3008B5C8-9BD3-4479-A564-90BFB3D780C0</td>
+       <td>group UUID</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>gcgl</code></td>
-       <td style="text-align:left;">boolean</td>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">group contains group leader / Group contains discoverable leader</td>
+       <td><code>gcgl</code></td>
+       <td>boolean</td>
+       <td>1</td>
+       <td>group contains group leader / Group contains discoverable leader</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>igl</code></td>
-       <td style="text-align:left;">boolean</td>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">is group leader</td>
+       <td><code>igl</code></td>
+       <td>boolean</td>
+       <td>1</td>
+       <td>is group leader</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>gpn</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">group public name</td>
+       <td><code>gpn</code></td>
+       <td>string</td>
+       <td>1</td>
+       <td>group public name</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>hgid</code></td>
-       <td style="text-align:left;">UUID string</td>
-       <td style="text-align:left;">CBCCCC31-29E6-4CBE-84ED-501F555172C9</td>
-       <td style="text-align:left;">home group UUID</td>
+       <td><code>hgid</code></td>
+       <td>UUID string</td>
+       <td>CBCCCC31-29E6-4CBE-84ED-501F555172C9</td>
+       <td>home group UUID</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>hmid</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;">household ID</td>
+       <td><code>hmid</code></td>
+       <td>string</td>
+       <td></td>
+       <td>household ID</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>pgcgl</code></td>
-       <td style="text-align:left;">boolean</td>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">parent group contains discoverable leader</td>
+       <td><code>pgcgl</code></td>
+       <td>boolean</td>
+       <td>1</td>
+       <td>parent group contains discoverable leader</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>pgid</code></td>
-       <td style="text-align:left;">UUID string</td>
-       <td style="text-align:left;">3008B5C8-9BD3-4479-A564-90BFB3D780C0</td>
-       <td style="text-align:left;">parent group UUID</td>
+       <td><code>pgid</code></td>
+       <td>UUID string</td>
+       <td>3008B5C8-9BD3-4479-A564-90BFB3D780C0</td>
+       <td>parent group UUID</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>tsid</code></td>
-       <td style="text-align:left;">UUID string</td>
-       <td style="text-align:left;">3008B5C8-9BD3-4479-A564-90BFB3D780C0</td>
-       <td style="text-align:left;">tight sync UUID</td>
+       <td><code>tsid</code></td>
+       <td>UUID string</td>
+       <td>3008B5C8-9BD3-4479-A564-90BFB3D780C0</td>
+       <td>tight sync UUID</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>rsf</code></td>
-       <td style="text-align:left;">64 bit hex number</td>
-       <td style="text-align:left;">0x0</td>
-       <td style="text-align:left;">required sender features</td>
+       <td><code>rsf</code></td>
+       <td>64 bit hex number</td>
+       <td>0x0</td>
+       <td>required sender features</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>protovers</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">1.1</td>
-       <td style="text-align:left;">protocol version</td>
+       <td><code>protovers</code></td>
+       <td>string</td>
+       <td>1.1</td>
+       <td>protocol version</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>vv</code></td>
-       <td style="text-align:left;">???</td>
-       <td style="text-align:left;">2</td>
-       <td style="text-align:left;">??? Only AppleTV and HomePod have this set</td>
+       <td><code>vv</code></td>
+       <td>?</td>
+       <td>2</td>
+       <td>vodka version</td>
       </tr>
       </tbody>
       </table>
@@ -527,301 +484,332 @@ txt:
       Otherwise it is not included in the TXT record.</p>
 
 
-      <h3 id="servicediscovery-airplayservice-Features">2.2.1. Features</h2>
+      <h3 id="servicediscovery-airplayservice-Features">2.2.1. Features</h3>
       <p>The <code>features</code> bitfield allows the following features to be defined:</p>
 
-      <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
-      <thead>
-      <tr>
-       <th style="text-align:left;">bit</th>
-       <th style="text-align:left;">name</th>
-       <th style="text-align:left;">description</th>
-      </tr>
-      </thead>
-
+      <table id="airplay-features">
+      <tbody id="airplay-features-interactive" class="noscript">
+        <tr>
+        <th colspan="3">
+          Examples:
+          <select id="airplay-features-examples" onchange="featuresExample(this)">
+            <option value="">Custom</option>
+            <option value="0x4A7FFFF7,0x4155FDE">4K Apple TV</option>
+            <option value="0x4A7FCA00,0x4156BD0">HomePod</option>
+            <option value="0x445D0A00,  0x1C340">Airport Express</option>
+            <option value="0x445F8A00,  0x1C340">Denon AVR3000</option>
+            <option value=" 0x4155FDE,      0xE">AirServer</option>
+            <option value="0x5A7FFFF7,     0x1E">Airplay</option>
+            <option value="0x40180200,    0x300">Required for multi-room audio</option>
+          </select>
+          <input type="text" id="airplay-features-input" onkeyup="featuresChanged(this)" onpaste="featuresChanged(this)">
+        </th>
+        <tr>
+      </tbody>
+      <tbody id="airplay-features-output" class="noscript">
+        <tr>
+         <td colspan="3">
+             Decimal:
+             <span id="airplay-features-dec"></span>
+        </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+             Hex:
+             <span id="airplay-features-hex"></span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+             mDNS: <span id="airplay-features-txt"></span>
+         </td>
+        </tr>
+      </tbody>
       <tbody>
       <tr>
-       <td style="text-align:left;">0</td>
-       <td style="text-align:left;"><code>Video</code></td>
-       <td style="text-align:left;">video supported</td>
+       <th>bit</th>
+       <th>name</th>
+       <th>description</th>
       </tr>
-      <tr>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;"><code>Photo</code></td>
-       <td style="text-align:left;">photo supported</td>
+    </tbody>
+      <tbody>
+      <tr id="airplay-features-bit0">
+       <td>0</td>
+       <td><code>Video</code></td>
+       <td>video supported</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">2</td>
-       <td style="text-align:left;"><code>VideoFairPlay</code></td>
-       <td style="text-align:left;">video protected with FairPlay DRM</td>
+      <tr id="airplay-features-bit1">
+       <td>1</td>
+       <td><code>Photo</code></td>
+       <td>photo supported</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">3</td>
-       <td style="text-align:left;"><code>VideoVolumeControl</code></td>
-       <td style="text-align:left;">volume control supported for videos</td>
+      <tr id="airplay-features-bit2">
+       <td>2</td>
+       <td><code>VideoFairPlay</code></td>
+       <td>video protected with FairPlay DRM</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">4</td>
-       <td style="text-align:left;"><code>VideoHTTPLiveStreams</code></td>
-       <td style="text-align:left;">http live streaming supported</td>
+      <tr id="airplay-features-bit3">
+       <td>3</td>
+       <td><code>VideoVolumeControl</code></td>
+       <td>volume control supported for videos</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">5</td>
-       <td style="text-align:left;"><code>Slideshow</code></td>
-       <td style="text-align:left;">slideshow supported</td>
+      <tr id="airplay-features-bit4">
+       <td>4</td>
+       <td><code>VideoHTTPLiveStreams</code></td>
+       <td>http live streaming supported</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">6</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit5">
+       <td>5</td>
+       <td><code>Slideshow</code></td>
+       <td>slideshow supported</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">7</td>
-       <td style="text-align:left;"><code>Screen</code></td>
-       <td style="text-align:left;">mirroring supported</td>
+      <tr id="airplay-features-bit6">
+       <td>6</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">8</td>
-       <td style="text-align:left;"><code>ScreenRotate</code></td>
-       <td style="text-align:left;">screen rotation supported</td>
+      <tr id="airplay-features-bit7">
+       <td>7</td>
+       <td><code>Screen</code></td>
+       <td>mirroring supported</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">9</td>
-       <td style="text-align:left;"><code>Audio</code></td>
-       <td style="text-align:left;">audio supported</td>
+      <tr id="airplay-features-bit8">
+       <td>8</td>
+       <td><code>ScreenRotate</code></td>
+       <td>screen rotation supported</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">10</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit9">
+       <td>9</td>
+       <td><code>Audio</code></td>
+       <td>audio supported</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">11</td>
-       <td style="text-align:left;"><code>AudioRedundant</code></td>
-       <td style="text-align:left;">audio packet redundancy supported</td>
+      <tr id="airplay-features-bit10">
+       <td>10</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">12</td>
-       <td style="text-align:left;"><code>FPSAPv2pt5_AES_GCM</code></td>
-       <td style="text-align:left;">FairPlay secure auth supported</td>
+      <tr id="airplay-features-bit11">
+       <td>11</td>
+       <td><code>AudioRedundant</code></td>
+       <td>audio packet redundancy supported</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">13</td>
-       <td style="text-align:left;"><code>PhotoCaching</code></td>
-       <td style="text-align:left;">photo preloading supported</td>
+      <tr id="airplay-features-bit12">
+       <td>12</td>
+       <td><code>FPSAPv2pt5_AES_GCM</code></td>
+       <td>FairPlay secure auth supported</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">14</td>
-       <td style="text-align:left;"><code>Authentication4</code></td>
-       <td style="text-align:left;">Authentication type 4</td>
+      <tr id="airplay-features-bit13">
+       <td>13</td>
+       <td><code>PhotoCaching</code></td>
+       <td>photo preloading supported</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">15</td>
-       <td style="text-align:left;"><code>MetadataFeature1</code></td>
-       <td style="text-align:left;">bit 1 of MetadataFeatures</td>
+      <tr id="airplay-features-bit14">
+       <td>14</td>
+       <td><code>Authentication4</code></td>
+       <td>Authentication type 4</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">16</td>
-       <td style="text-align:left;"><code>MetadataFeature2</code></td>
-       <td style="text-align:left;">bit 1 of MetadataFeatures</td>
+      <tr id="airplay-features-bit15">
+       <td>15</td>
+       <td><code>MetadataFeature1</code></td>
+       <td>bit 1 of MetadataFeatures</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">17</td>
-       <td style="text-align:left;"><code>MetadataFeature0</code></td>
-       <td style="text-align:left;">bit 1 of MetadataFeatures</td>
+      <tr id="airplay-features-bit16">
+       <td>16</td>
+       <td><code>MetadataFeature2</code></td>
+       <td>bit 1 of MetadataFeatures</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">18</td>
-       <td style="text-align:left;"><code>AudioFormat1</code></td>
-       <td style="text-align:left;">support for audio format 1</td>
+      <tr id="airplay-features-bit17">
+       <td>17</td>
+       <td><code>MetadataFeature0</code></td>
+       <td>bit 1 of MetadataFeatures</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">19</td>
-       <td style="text-align:left;"><code>AudioFormat2</code></td>
-       <td style="text-align:left;">support for audio format 2. This bit must be set for AirPlay 2 connection to work</td>
+      <tr id="airplay-features-bit18">
+       <td>18</td>
+       <td><code>AudioFormat1</code></td>
+       <td>support for audio format 1</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">20</td>
-       <td style="text-align:left;"><code>AudioFormat3</code></td>
-       <td style="text-align:left;">support for audio format 3. This bit must be set for AirPlay 2 connection to work</td>
+      <tr id="airplay-features-bit19">
+       <td>19</td>
+       <td><code>AudioFormat2</code></td>
+       <td>support for audio format 2. This bit must be set for AirPlay 2 connection to work</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">21</td>
-       <td style="text-align:left;"><code>AudioFormat4</code></td>
-       <td style="text-align:left;">support for audio format 4</td>
+      <tr id="airplay-features-bit20">
+       <td>20</td>
+       <td><code>AudioFormat3</code></td>
+       <td>support for audio format 3. This bit must be set for AirPlay 2 connection to work</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">22</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit21">
+       <td>21</td>
+       <td><code>AudioFormat4</code></td>
+       <td>support for audio format 4</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">23</td>
-       <td style="text-align:left;"><code>Authentication1</code></td>
-       <td style="text-align:left;">Authentication type 1</td>
+      <tr id="airplay-features-bit22">
+       <td>22</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">24</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit23">
+       <td>23</td>
+       <td><code>Authentication1</code></td>
+       <td>Authentication type 1</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">25</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit24">
+       <td>24</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">26</td>
-       <td style="text-align:left;"><code>HasUnifiedAdvertiserInfo</code></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit25">
+       <td>25</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">27</td>
-       <td style="text-align:left;"><code>SupportsLegacyPairing</code></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit26">
+       <td>26</td>
+       <td><code>HasUnifiedAdvertiserInfo</code></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">28</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit27">
+       <td>27</td>
+       <td><code>SupportsLegacyPairing</code></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">29</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit28">
+       <td>28</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">30</td>
-       <td style="text-align:left;"><code>RAOP</code></td>
-       <td style="text-align:left;">RAOP is supported on this port. With this bit set your don't need the AirTunes service</td>
+      <tr id="airplay-features-bit29">
+       <td>29</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">31</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit30">
+       <td>30</td>
+       <td><code>RAOP</code></td>
+       <td>RAOP is supported on this port. With this bit set your don't need the AirTunes service</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">32</td>
-       <td style="text-align:left;"><code>IsCarPlay</code> / <code>SupportsVolume</code></td>
-       <td style="text-align:left;">Don’t read key from <code>pk</code> record it is known</td>
+      <tr id="airplay-features-bit31">
+       <td>31</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">33</td>
-       <td style="text-align:left;"><code>SupportsAirPlayVideoPlayQueue</code></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit32">
+       <td>32</td>
+       <td><code>IsCarPlay</code> / <code>SupportsVolume</code></td>
+       <td>Don’t read key from <code>pk</code> record it is known</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">34</td>
-       <td style="text-align:left;"><code>SupportsAirPlayFromCloud</code></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit33">
+       <td>33</td>
+       <td><code>SupportsAirPlayVideoPlayQueue</code></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">35</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit34">
+       <td>34</td>
+       <td><code>SupportsAirPlayFromCloud</code></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">36</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit35">
+       <td>35</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">37</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit36">
+       <td>36</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">38</td>
-       <td style="text-align:left;"><code>SupportsCoreUtilsPairingAndEncryption</code></td>
-       <td style="text-align:left;">
+      <tr id="airplay-features-bit37">
+       <td>37</td>
+       <td></td>
+       <td></td>
+      </tr>
+      <tr id="airplay-features-bit38">
+       <td>38</td>
+       <td><code>SupportsCoreUtilsPairingAndEncryption</code></td>
+       <td>
          <code>SupportsHKPairingAndAccessControl</code>,
          <code>SupportsSystemPairing</code> and
          <code>SupportsTransientPairing</code> implies
          <code>SupportsCoreUtilsPairingAndEncryption</code></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">39</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit39">
+       <td>39</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">40</td>
-       <td style="text-align:left;"><code>SupportsBufferedAudio</code></td>
-       <td style="text-align:left;">Bit needed for device to show as supporting multi-room audio</td>
+      <tr id="airplay-features-bit40">
+       <td>40</td>
+       <td><code>SupportsBufferedAudio</code></td>
+       <td>Bit needed for device to show as supporting multi-room audio</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">41</td>
-       <td style="text-align:left;"><code>SupportsPTP</code></td>
-       <td style="text-align:left;">Bit needed for device to show as supporting multi-room audio</td>
+      <tr id="airplay-features-bit41">
+       <td>41</td>
+       <td><code>SupportsPTP</code></td>
+       <td>Bit needed for device to show as supporting multi-room audio</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">42</td>
-       <td style="text-align:left;"><code>SupportsScreenMultiCodec</code></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit42">
+       <td>42</td>
+       <td><code>SupportsScreenMultiCodec</code></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">43</td>
-       <td style="text-align:left;"><code>SupportsSystemPairing</code></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit43">
+       <td>43</td>
+       <td><code>SupportsSystemPairing</code></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">44</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit44">
+       <td>44</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">45</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit45">
+       <td>45</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">46</td>
-       <td style="text-align:left;"><code>SupportsHKPairingAndAccessControl</code></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit46">
+       <td>46</td>
+       <td><code>SupportsHKPairingAndAccessControl</code></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">47</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit47">
+       <td>47</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">48</td>
-       <td style="text-align:left;"><code>SupportsTransientPairing</code></td>
-       <td style="text-align:left;"><code>SupportsSystemPairing</code> implies <code>SupportsTransientPairing</code></td>
+      <tr id="airplay-features-bit48">
+       <td>48</td>
+       <td><code>SupportsTransientPairing</code></td>
+       <td><code>SupportsSystemPairing</code> implies <code>SupportsTransientPairing</code></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">49</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit49">
+       <td>49</td>
+       <td></td>
+       <td></td>
       </tr>
-      <tr>
-       <td style="text-align:left;">50</td>
-       <td style="text-align:left;"><code>MetadataFeature4</code></td>
-       <td style="text-align:left;">bit 4 of MetadataFeatures</td>
+      <tr id="airplay-features-bit50">
+       <td>50</td>
+       <td><code>MetadataFeature4</code></td>
+       <td>bit 4 of MetadataFeatures</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">51</td>
-       <td style="text-align:left;"><code>SupportsUnifiedPairSetupAndMFi</code></td>
-       <td style="text-align:left;">Authentication type 8</td>
+      <tr id="airplay-features-bit51">
+       <td>51</td>
+       <td><code>SupportsUnifiedPairSetupAndMFi</code></td>
+       <td>Authentication type 8</td>
       </tr>
-      <tr>
-       <td style="text-align:left;">52</td>
-       <td style="text-align:left;"><code>SupportsSetPeersExtendedMessage</code></td>
-       <td style="text-align:left;"></td>
+      <tr id="airplay-features-bit52">
+       <td>52</td>
+       <td><code>SupportsSetPeersExtendedMessage</code></td>
+       <td></td>
       </tr>
-
       </tbody>
       </table>
+
       <p>Note that the Apple TV does not support <code>VideoVolumeControl</code>. It has
       probably been introduced for the upcoming Apple television.</p>
 
-      <h3 id="servicediscovery-airplayservice-MetadataFeatures">2.2.2. MetadataFeatures</h2>
+
+      <h3 id="servicediscovery-airplayservice-MetadataFeatures">2.2.2. MetadataFeatures</h3>
       <p class="caption">MetadataFeatures</p>
       <pre><code>
 bit 17 = bit 0
@@ -834,7 +822,7 @@ is apple tv or home pod of certain version = bit 6
 </code></pre>
 
 
-      <h3 id="servicediscovery-airplayservice-SupportedAudioFormats">2.2.3. SupportedAudioFormats</h2>
+      <h3 id="servicediscovery-airplayservice-SupportedAudioFormats">2.2.3. SupportedAudioFormats</h3>
       <p class="caption">SupportedAudioFormats</p>
 <pre><code>
                        24   20   16   12    8    4    0
@@ -845,7 +833,7 @@ bit 21 = 0x1000000 = 0001 0000 0000 0000 0000 0000 0000
 </code></pre>
 
 
-      <h3 id="servicediscovery-airplayservice-Subtype">2.2.4. Subtype</h2>
+      <h3 id="servicediscovery-airplayservice-Subtype">2.2.4. Subtype</h3>
       <p class="caption">Subtype</p>
 <pre><code>
 AppleTV = deviceModel has prefix “AppleTV”
@@ -855,132 +843,126 @@ Unknown = otherwise
 </code></pre>
 
 
-      <h3 id="servicediscovery-airplayservice-Subtype">2.2.5. System Flags</h2>
+      <h3 id="servicediscovery-airplayservice-Subtype">2.2.5. System Flags</h3>
       <p>The <code>flags</code> bitfield allows the following flags to be defined:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">bit</th>
-       <th style="text-align:left;">name</th>
-       <th style="text-align:left;">description</th>
+       <th>bit</th>
+       <th>name</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;">0</td>
-       <td style="text-align:left;">???</td>
-       <td style="text-align:left;">Not seen set anywhere</td>
+       <td>0</td>
+       <td>???</td>
+       <td>Not seen set anywhere</td>
       </tr>
       <tr>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">???</td>
-       <td style="text-align:left;">Not seen set anywhere</td>
+       <td>1</td>
+       <td>???</td>
+       <td>Not seen set anywhere</td>
       </tr>
       <tr>
-       <td style="text-align:left;">2</td>
-       <td style="text-align:left;">???</td>
-       <td style="text-align:left;">Seen on AppleTV, Denon AVR, HomePod, Airport Express</td>
+       <td>2</td>
+       <td>???</td>
+       <td>Seen on AppleTV, Denon AVR, HomePod, Airport Express</td>
       </tr>
       <tr>
-       <td style="text-align:left;">3</td>
-       <td style="text-align:left;"><code>PINRequired</code></td>
-       <td style="text-align:left;"></td>
+       <td>3</td>
+       <td><code>PINRequired</code></td>
+       <td></td>
       </tr>
       <tr>
-       <td style="text-align:left;">4</td>
-       <td style="text-align:left;">???</td>
-       <td style="text-align:left;">Not seen set anywhere</td>
+       <td>4</td>
+       <td>???</td>
+       <td>Not seen set anywhere</td>
       </tr>
       <tr>
-       <td style="text-align:left;">5</td>
-       <td style="text-align:left;">???</td>
-       <td style="text-align:left;">Not seen set anywhere</td>
+       <td>5</td>
+       <td>???</td>
+       <td>Not seen set anywhere</td>
       </tr>
       <tr>
-       <td style="text-align:left;">6</td>
-       <td style="text-align:left;"><code>SupportsAirPlayFromCloud</code></td>
-       <td style="text-align:left;"></td>
+       <td>6</td>
+       <td><code>SupportsAirPlayFromCloud</code></td>
+       <td></td>
       </tr>
       <tr>
-       <td style="text-align:left;">7</td>
-       <td style="text-align:left;"><code>PasswordRequired</code></td>
-       <td style="text-align:left;"></td>
+       <td>7</td>
+       <td><code>PasswordRequired</code></td>
+       <td></td>
       </tr>
       <tr>
-       <td style="text-align:left;">8</td>
-       <td style="text-align:left;">???</td>
-       <td style="text-align:left;">Not seen set anywhere</td>
+       <td>8</td>
+       <td>???</td>
+       <td>Not seen set anywhere</td>
       </tr>
       <tr>
-       <td style="text-align:left;">9</td>
-       <td style="text-align:left;"><code>OneTimePairingRequired</code></td>
-       <td style="text-align:left;"></td>
+       <td>9</td>
+       <td><code>OneTimePairingRequired</code></td>
+       <td></td>
       </tr>
       <tr>
-       <td style="text-align:left;">10</td>
-       <td style="text-align:left;"><code>DeviceWasSetupForHKAccessControl</code></td>
-       <td style="text-align:left;"></td>
+       <td>10</td>
+       <td><code>DeviceWasSetupForHKAccessControl</code></td>
+       <td></td>
       </tr>
       <tr>
-       <td style="text-align:left;">11</td>
-       <td style="text-align:left;"><code>DeviceSupportsRelay</code></td>
-       <td style="text-align:left;">Shows in logs as relayable. When set iOS will connect to the device to get currently playing track.</td>
+       <td>11</td>
+       <td><code>DeviceSupportsRelay</code></td>
+       <td>Shows in logs as relayable. When set iOS will connect to the device to get currently playing track.</td>
       </tr>
       <tr>
-       <td style="text-align:left;">12</td>
-       <td style="text-align:left;"><code>SilentPrimary</code></td>
-       <td style="text-align:left;"></td>
+       <td>12</td>
+       <td><code>SilentPrimary</code></td>
+       <td></td>
       </tr>
       <tr>
-       <td style="text-align:left;">13</td>
-       <td style="text-align:left;"><code>TightSyncIsGroupLeader</code></td>
-       <td style="text-align:left;"></td>
+       <td>13</td>
+       <td><code>TightSyncIsGroupLeader</code></td>
+       <td></td>
       </tr>
       <tr>
-       <td style="text-align:left;">14</td>
-       <td style="text-align:left;"><code>TightSyncBuddyNotReachable</code></td>
-       <td style="text-align:left;"></td>
+       <td>14</td>
+       <td><code>TightSyncBuddyNotReachable</code></td>
+       <td></td>
       </tr>
       <tr>
-       <td style="text-align:left;">15</td>
-       <td style="text-align:left;"><code>IsAppleMusicSubscriber</code></td>
-       <td style="text-align:left;">Shows in logs as music</td>
+       <td>15</td>
+       <td><code>IsAppleMusicSubscriber</code></td>
+       <td>Shows in logs as music</td>
       </tr>
       <tr>
-       <td style="text-align:left;">16</td>
-       <td style="text-align:left;"><code>CloudLibraryIsOn</code></td>
-       <td style="text-align:left;">Shows in logs as iCML</td>
+       <td>16</td>
+       <td><code>CloudLibraryIsOn</code></td>
+       <td>Shows in logs as iCML</td>
       </tr>
       <tr>
-       <td style="text-align:left;">17</td>
-       <td style="text-align:left;"><code>ReceiverSessionIsActive</code></td>
-       <td style="text-align:left;">Shows in logs as airplay-receiving. Set when Apple TV is receiving anything via AirPlay.</td>
+       <td>17</td>
+       <td><code>ReceiverSessionIsActive</code></td>
+       <td>Shows in logs as airplay-receiving. Set when Apple TV is receiving anything via AirPlay.</td>
       </tr>
       <tr>
-       <td style="text-align:left;">18</td>
-       <td style="text-align:left;">???</td>
-       <td style="text-align:left;">Not seen set anywhere</td>
+       <td>18</td>
+       <td>???</td>
+       <td>Not seen set anywhere</td>
       </tr>
       <tr>
-       <td style="text-align:left;">19</td>
-       <td style="text-align:left;">???</td>
-       <td style="text-align:left;">Not seen set anywhere</td>
+       <td>19</td>
+       <td>???</td>
+       <td>Not seen set anywhere</td>
       </tr>
       </tbody>
       </table>
 
-      <h3 id="servicediscovery-airplayservice-CanBeRemoteControlled">2.2.6. CanBeRemoteControlled</h2>
+      <h3 id="servicediscovery-airplayservice-CanBeRemoteControlled">2.2.6. CanBeRemoteControlled</h3>
       <p><code>SupportsBufferedAudio</code> is set and <code>PINRequired</code> is not set</p>
 
-      <h3 id="servicediscovery-airplayservice-StateChanges">2.2.7. State Changes</h2>
+      <h3 id="servicediscovery-airplayservice-StateChanges">2.2.7. State Changes</h3>
       <p>Depending on the state of the device the mDNS record is changed to
         reflect this. Primarily it is the <code>flags</code>, <code>gid</code>,
         <code>igl</code>, <code>gcgl</code>, <code>pgid</code> and
@@ -1027,7 +1009,7 @@ gcgl=1
 </code></pre>
 
 
-      <h3 id="servicediscovery-airplayservice-Protocol">2.2.8. Protocol</h2>
+      <h3 id="servicediscovery-airplayservice-Protocol">2.2.8. Protocol</h3>
 
       <p>The AirPlay server is both a <em>RTSP</em> server (<a href="http://www.ietf.org/rfc/rfc2326.txt">RFC 2326</a>)
       and a <em>HTTP</em> server (<a href="http://www.ietf.org/rfc/rfc2616.txt">RFC 2616</a>).
@@ -1039,30 +1021,24 @@ gcgl=1
       <p>All HTTP requests share some common headers:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">name</th>
-       <th style="text-align:left;">value</th>
-       <th style="text-align:left;">description</th>
+       <th>name</th>
+       <th>value</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>X-Apple-Session-ID</code></td>
-       <td style="text-align:left;">1bd6ceeb&#8230;</td>
-       <td style="text-align:left;">UUID for the session</td>
+       <td><code>X-Apple-Session-ID</code></td>
+       <td>1bd6ceeb&#8230;</td>
+       <td>UUID for the session</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>X-Apple-Device-ID</code></td>
-       <td style="text-align:left;">0xdc2b61a0ce79</td>
-       <td style="text-align:left;">MAC address</td>
+       <td><code>X-Apple-Device-ID</code></td>
+       <td>0xdc2b61a0ce79</td>
+       <td>MAC address</td>
       </tr>
       </tbody>
       </table>
@@ -1145,30 +1121,25 @@ Content-Length: 6411
       <p>Send a JPEG picture to the server. The following headers are supported:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">name</th>
-       <th style="text-align:left;">description</th>
+       <th>name</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>X-Apple-AssetKey</code></td>
-       <td style="text-align:left;">UUID for the picture</td>
+       <td><code>X-Apple-AssetKey</code></td>
+       <td>UUID for the picture</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>X-Apple-Transition</code></td>
-       <td style="text-align:left;">transition that should be used to show the picture</td>
+       <td><code>X-Apple-Transition</code></td>
+       <td>transition that should be used to show the picture</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>X-Apple-AssetAction</code></td>
-       <td style="text-align:left;">specify a caching operation</td>
+       <td><code>X-Apple-AssetAction</code></td>
+       <td>specify a caching operation</td>
       </tr>
       </tbody>
       </table>
@@ -1220,35 +1191,29 @@ Content-Length: 0
       transmitted. The following parameters are sent in an XML property list:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">key</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">description</th>
+       <th>key</th>
+       <th>type</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;">settings.slideDuration</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">slide duration in seconds</td>
+       <td>settings.slideDuration</td>
+       <td>integer</td>
+       <td>slide duration in seconds</td>
       </tr>
       <tr>
-       <td style="text-align:left;">settings.theme</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">selected transition theme</td>
+       <td>settings.theme</td>
+       <td>string</td>
+       <td>selected transition theme</td>
       </tr>
       <tr>
-       <td style="text-align:left;">state</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;"><code>playing</code> or <code>stopped</code></td>
+       <td>state</td>
+       <td>string</td>
+       <td><code>playing</code> or <code>stopped</code></td>
       </tr>
       </tbody>
       </table>
@@ -1321,35 +1286,29 @@ Content-Length: 0
       server can safely disconnect.</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">key</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">description</th>
+       <th>key</th>
+       <th>type</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;">category</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;"><code>photo</code></td>
+       <td>category</td>
+       <td>string</td>
+       <td><code>photo</code></td>
       </tr>
       <tr>
-       <td style="text-align:left;">sessionID</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">session ID</td>
+       <td>sessionID</td>
+       <td>integer</td>
+       <td>session ID</td>
       </tr>
       <tr>
-       <td style="text-align:left;">state</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;"><code>stopped</code></td>
+       <td>state</td>
+       <td>string</td>
+       <td><code>stopped</code></td>
       </tr>
       </tbody>
       </table>
@@ -1388,40 +1347,34 @@ Content-Length: 0
       <p>Slideshow events are used to notify the server about the playback state.</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">key</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">description</th>
+       <th>key</th>
+       <th>type</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;">category</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;"><code>slideshow</code></td>
+       <td>category</td>
+       <td>string</td>
+       <td><code>slideshow</code></td>
       </tr>
       <tr>
-       <td style="text-align:left;">lastAssetID</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">last asset ID</td>
+       <td>lastAssetID</td>
+       <td>integer</td>
+       <td>last asset ID</td>
       </tr>
       <tr>
-       <td style="text-align:left;">sessionID</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">session ID</td>
+       <td>sessionID</td>
+       <td>integer</td>
+       <td>session ID</td>
       </tr>
       <tr>
-       <td style="text-align:left;">state</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;"><code>loading</code>, <code>playing</code> or <code>stopped</code></td>
+       <td>state</td>
+       <td>string</td>
+       <td><code>loading</code>, <code>playing</code> or <code>stopped</code></td>
       </tr>
       </tbody>
       </table>
@@ -1521,35 +1474,29 @@ Content-Length: 0
       is expected as reply:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">key</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">description</th>
+       <th>key</th>
+       <th>type</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;">data</td>
-       <td style="text-align:left;">data</td>
-       <td style="text-align:left;">JPEG picture</td>
+       <td>data</td>
+       <td>data</td>
+       <td>JPEG picture</td>
       </tr>
       <tr>
-       <td style="text-align:left;">info.id</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">asset ID</td>
+       <td>info.id</td>
+       <td>integer</td>
+       <td>asset ID</td>
       </tr>
       <tr>
-       <td style="text-align:left;">info.key</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">1</td>
+       <td>info.key</td>
+       <td>integer</td>
+       <td>1</td>
       </tr>
       </tbody>
       </table>
@@ -1603,52 +1550,45 @@ Content-Length: 58932
       are returned as an XML property list, with the following properties:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">key</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">value</th>
-       <th style="text-align:left;">description</th>
+       <th>key</th>
+       <th>type</th>
+       <th>value</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;">deviceid</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">58:55:CA:1A:E2:88</td>
-       <td style="text-align:left;">MAC address</td>
+       <td>deviceid</td>
+       <td>string</td>
+       <td>58:55:CA:1A:E2:88</td>
+       <td>MAC address</td>
       </tr>
       <tr>
-       <td style="text-align:left;">features</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">14839</td>
-       <td style="text-align:left;">0x39f7</td>
+       <td>features</td>
+       <td>integer</td>
+       <td>14839</td>
+       <td>0x39f7</td>
       </tr>
       <tr>
-       <td style="text-align:left;">model</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">AppleTV2,1</td>
-       <td style="text-align:left;">device model</td>
+       <td>model</td>
+       <td>string</td>
+       <td>AppleTV2,1</td>
+       <td>device model</td>
       </tr>
       <tr>
-       <td style="text-align:left;">protovers</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">1.0</td>
-       <td style="text-align:left;">protocol version</td>
+       <td>protovers</td>
+       <td>string</td>
+       <td>1.0</td>
+       <td>protocol version</td>
       </tr>
       <tr>
-       <td style="text-align:left;">srcvers</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">120.2</td>
-       <td style="text-align:left;">server version</td>
+       <td>srcvers</td>
+       <td>string</td>
+       <td>120.2</td>
+       <td>server version</td>
       </tr>
       </tbody>
       </table>
@@ -1697,30 +1637,24 @@ Content-Length: 427
       <p>Start video playback. The body contains the following parameters:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">name</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">description</th>
+       <th>name</th>
+       <th>type</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>Content-Location</code></td>
-       <td style="text-align:left;">URL</td>
-       <td style="text-align:left;">URL for the video</td>
+       <td><code>Content-Location</code></td>
+       <td>URL</td>
+       <td>URL for the video</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>Start-Position</code></td>
-       <td style="text-align:left;">float</td>
-       <td style="text-align:left;">starting position between 0 and 1</td>
+       <td><code>Start-Position</code></td>
+       <td>float</td>
+       <td>starting position between 0 and 1</td>
       </tr>
       </tbody>
       </table>
@@ -1853,30 +1787,24 @@ Content-Length: 0
       update a timeline on the client. The following parameters are returned:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">name</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">description</th>
+       <th>name</th>
+       <th>type</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>duration</code></td>
-       <td style="text-align:left;">float</td>
-       <td style="text-align:left;">duration in seconds</td>
+       <td><code>duration</code></td>
+       <td>float</td>
+       <td>duration in seconds</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>position</code></td>
-       <td style="text-align:left;">float</td>
-       <td style="text-align:left;">position in seconds</td>
+       <td><code>position</code></td>
+       <td>float</td>
+       <td>position in seconds</td>
       </tr>
       </tbody>
       </table>
@@ -1907,98 +1835,87 @@ position: 14.467000
       following parameters:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">key</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">description</th>
+       <th>key</th>
+       <th>type</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>duration</code></td>
-       <td style="text-align:left;">real</td>
-       <td style="text-align:left;">playback duration in seconds</td>
+       <td><code>duration</code></td>
+       <td>real</td>
+       <td>playback duration in seconds</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>position</code></td>
-       <td style="text-align:left;">real</td>
-       <td style="text-align:left;">playback position in seconds</td>
+       <td><code>position</code></td>
+       <td>real</td>
+       <td>playback position in seconds</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>rate</code></td>
-       <td style="text-align:left;">real</td>
-       <td style="text-align:left;">playback rate</td>
+       <td><code>rate</code></td>
+       <td>real</td>
+       <td>playback rate</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>readyToPlay</code></td>
-       <td style="text-align:left;">boolean</td>
-       <td style="text-align:left;">ready to play</td>
+       <td><code>readyToPlay</code></td>
+       <td>boolean</td>
+       <td>ready to play</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>playbackBufferEmpty</code></td>
-       <td style="text-align:left;">boolean</td>
-       <td style="text-align:left;">buffer empty</td>
+       <td><code>playbackBufferEmpty</code></td>
+       <td>boolean</td>
+       <td>buffer empty</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>playbackBufferFull</code></td>
-       <td style="text-align:left;">boolean</td>
-       <td style="text-align:left;">buffer full</td>
+       <td><code>playbackBufferFull</code></td>
+       <td>boolean</td>
+       <td>buffer full</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>playbackLikelyToKeepUp</code></td>
-       <td style="text-align:left;">boolean</td>
-       <td style="text-align:left;">playback likely to keep up</td>
+       <td><code>playbackLikelyToKeepUp</code></td>
+       <td>boolean</td>
+       <td>playback likely to keep up</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>loadedTimeRanges</code></td>
-       <td style="text-align:left;">array</td>
-       <td style="text-align:left;">array of loaded time ranges</td>
+       <td><code>loadedTimeRanges</code></td>
+       <td>array</td>
+       <td>array of loaded time ranges</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>seekableTimeRanges</code></td>
-       <td style="text-align:left;">array</td>
-       <td style="text-align:left;">array of seekable time ranges</td>
+       <td><code>seekableTimeRanges</code></td>
+       <td>array</td>
+       <td>array of seekable time ranges</td>
       </tr>
       </tbody>
       </table>
+
       <p>Ranges are defined as dictionaries with the following keys:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">key</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">description</th>
+       <th>key</th>
+       <th>type</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>start</code></td>
-       <td style="text-align:left;">real</td>
-       <td style="text-align:left;">range start time in seconds</td>
+       <td><code>start</code></td>
+       <td>real</td>
+       <td>range start time in seconds</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>duration</code></td>
-       <td style="text-align:left;">real</td>
-       <td style="text-align:left;">range duration in seconds</td>
+       <td><code>duration</code></td>
+       <td>real</td>
+       <td>range duration in seconds</td>
       </tr>
       </tbody>
       </table>
+
       <p><span class="ex">Example:</span> get playback info</p>
 
       <p class="cli_srv">client &rarr; server</p>
@@ -2055,29 +1972,24 @@ X-Transmit-Date: 2012-03-16T15:31:42.607066Z
       following properties are defined:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">argument</th>
-       <th style="text-align:left;">description</th>
+       <th>argument</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>forwardEndTime</code></td>
-       <td style="text-align:left;">forward end time</td>
+       <td><code>forwardEndTime</code></td>
+       <td>forward end time</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>reverseEndTime</code></td>
-       <td style="text-align:left;">reverse end time</td>
+       <td><code>reverseEndTime</code></td>
+       <td>reverse end time</td>
       </tr>
       </tbody>
       </table>
+
       <p><span class="ex">Example:</span> set forward end time</p>
 
       <p class="cli_srv">client &rarr; server</p>
@@ -2131,29 +2043,24 @@ Content-Length: 58
       following properties are defined:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">argument</th>
-       <th style="text-align:left;">description</th>
+       <th>argument</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>playbackAccessLog</code></td>
-       <td style="text-align:left;">playback access log</td>
+       <td><code>playbackAccessLog</code></td>
+       <td>playback access log</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>playbackErrorLog</code></td>
-       <td style="text-align:left;">playback error log</td>
+       <td><code>playbackErrorLog</code></td>
+       <td>playback error log</td>
       </tr>
       </tbody>
       </table>
+
       <p><span class="ex">Example:</span> get playback access log</p>
 
       <p class="cli_srv">client &rarr; server</p>
@@ -2209,38 +2116,32 @@ Content-Length: 530
       <p>This event is used to send the playback state to the client:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">key</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">description</th>
+       <th>key</th>
+       <th>type</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">category</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;"><code>video</code></td>
+       <td>category</td>
+       <td>string</td>
+       <td><code>video</code></td>
       </tr>
       <tr>
-       <td style="text-align:left;">sessionID</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">session id</td>
+       <td>sessionID</td>
+       <td>integer</td>
+       <td>session id</td>
       </tr>
       <tr>
-       <td style="text-align:left;">state</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;"><code>loading</code>, <code>playing</code>, <code>paused</code> or <code>stopped</code></td>
+       <td>state</td>
+       <td>string</td>
+       <td><code>loading</code>, <code>playing</code>, <code>paused</code> or <code>stopped</code></td>
       </tr>
       </tbody>
       </table>
+
       <p><span class="ex">Example:</span> notify the client that video playback is paused</p>
 
       <p class="srv_cli">server &rarr; client</p>
@@ -2413,33 +2314,28 @@ CSeq: 27
       necessary transport informations. Three UDP channels are setup:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">channel</th>
-       <th style="text-align:left;">description</th>
+       <th>channel</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">server</td>
-       <td style="text-align:left;">audio data</td>
+       <td>server</td>
+       <td>audio data</td>
       </tr>
       <tr>
-       <td style="text-align:left;">control</td>
-       <td style="text-align:left;">sync and retransmit requests</td>
+       <td>control</td>
+       <td>sync and retransmit requests</td>
       </tr>
       <tr>
-       <td style="text-align:left;">timing</td>
-       <td style="text-align:left;">master clock sync</td>
+       <td>timing</td>
+       <td>master clock sync</td>
       </tr>
       </tbody>
       </table>
+
       <p><span class="ex">Example:</span> setup a record session</p>
 
       <p class="cli_srv">client &rarr; server</p>
@@ -2469,33 +2365,27 @@ CSeq: 4
       contains the following parameters:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">name</th>
-       <th style="text-align:left;">size</th>
-       <th style="text-align:left;">description</th>
+       <th>name</th>
+       <th>size</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>seq</code></td>
-       <td style="text-align:left;">16-bit</td>
-       <td style="text-align:left;">initial RTP sequence number</td>
+       <td><code>seq</code></td>
+       <td>16-bit</td>
+       <td>initial RTP sequence number</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>rtptime</code></td>
-       <td style="text-align:left;">32-bit</td>
-       <td style="text-align:left;">initial RTP timestamp</td>
+       <td><code>rtptime</code></td>
+       <td>32-bit</td>
+       <td>initial RTP timestamp</td>
       </tr>
       </tbody>
       </table>
+
       <p><span class="ex">Example:</span> start audio stream</p>
 
       <p class="cli_srv">client &rarr; server</p>
@@ -2576,53 +2466,47 @@ CSeq: 32
       <p>The following payload types are defined:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">payload type</th>
-       <th style="text-align:left;">port</th>
-       <th style="text-align:left;">description</th>
+       <th>payload type</th>
+       <th>port</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">82</td>
-       <td style="text-align:left;"><code>timing_port</code></td>
-       <td style="text-align:left;">timing request</td>
+       <td>82</td>
+       <td><code>timing_port</code></td>
+       <td>timing request</td>
       </tr>
       <tr>
-       <td style="text-align:left;">83</td>
-       <td style="text-align:left;"><code>timing_port</code></td>
-       <td style="text-align:left;">timing reply</td>
+       <td>83</td>
+       <td><code>timing_port</code></td>
+       <td>timing reply</td>
       </tr>
       <tr>
-       <td style="text-align:left;">84</td>
-       <td style="text-align:left;"><code>control_port</code></td>
-       <td style="text-align:left;">time sync</td>
+       <td>84</td>
+       <td><code>control_port</code></td>
+       <td>time sync</td>
       </tr>
       <tr>
-       <td style="text-align:left;">85</td>
-       <td style="text-align:left;"><code>control_port</code></td>
-       <td style="text-align:left;">retransmit request</td>
+       <td>85</td>
+       <td><code>control_port</code></td>
+       <td>retransmit request</td>
       </tr>
       <tr>
-       <td style="text-align:left;">86</td>
-       <td style="text-align:left;"><code>control_port</code></td>
-       <td style="text-align:left;">retransmit reply</td>
+       <td>86</td>
+       <td><code>control_port</code></td>
+       <td>retransmit reply</td>
       </tr>
       <tr>
-       <td style="text-align:left;">96</td>
-       <td style="text-align:left;"><code>server_port</code></td>
-       <td style="text-align:left;">audio data</td>
+       <td>96</td>
+       <td><code>server_port</code></td>
+       <td>audio data</td>
       </tr>
       </tbody>
       </table>
+
       <h3>Audio packets</h3>
 
       <p>Audio data is sent using the <code>DynamicRTP-Type-96</code> payload type. The
@@ -2661,33 +2545,28 @@ Real-Time Transport Protocol
       <code>FLUSH</code> requests. The <code>SSRC</code> field is not included in the RTP header.</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">bytes</th>
-       <th style="text-align:left;">description</th>
+       <th>bytes</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">8</td>
-       <td style="text-align:left;">RTP header without <code>SSRC</code></td>
+       <td>8</td>
+       <td>RTP header without <code>SSRC</code></td>
       </tr>
       <tr>
-       <td style="text-align:left;">8</td>
-       <td style="text-align:left;">current NTP time</td>
+       <td>8</td>
+       <td>current NTP time</td>
       </tr>
       <tr>
-       <td style="text-align:left;">4</td>
-       <td style="text-align:left;">RTP timestamp for the next audio packet</td>
+       <td>4</td>
+       <td>RTP timestamp for the next audio packet</td>
       </tr>
       </tbody>
       </table>
+
       <p><span class="ex">Example:</span> sync packet</p>
 
       <p class="cli_srv">client &rarr; server</p>
@@ -2715,33 +2594,28 @@ Real-Time Transport Protocol
       <code>SSRC</code> field is not included in the RTP header.</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">bytes</th>
-       <th style="text-align:left;">description</th>
+       <th>bytes</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">8</td>
-       <td style="text-align:left;">RTP header without <code>SSRC</code></td>
+       <td>8</td>
+       <td>RTP header without <code>SSRC</code></td>
       </tr>
       <tr>
-       <td style="text-align:left;">2</td>
-       <td style="text-align:left;">sequence number for the first lost packet</td>
+       <td>2</td>
+       <td>sequence number for the first lost packet</td>
       </tr>
       <tr>
-       <td style="text-align:left;">2</td>
-       <td style="text-align:left;">number of lost packets</td>
+       <td>2</td>
+       <td>number of lost packets</td>
       </tr>
       </tbody>
       </table>
+
       <p>Retransmit replies have payload type 86, with a full audio RTP packet
       after the sequence number.</p>
 
@@ -2757,37 +2631,32 @@ Real-Time Transport Protocol
       bytes, followed by three <em>NTP</em> timestamps:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">bytes</th>
-       <th style="text-align:left;">description</th>
+       <th>bytes</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">8</td>
-       <td style="text-align:left;">RTP header without <code>SSRC</code></td>
+       <td>8</td>
+       <td>RTP header without <code>SSRC</code></td>
       </tr>
       <tr>
-       <td style="text-align:left;">8</td>
-       <td style="text-align:left;">origin timestamp</td>
+       <td>8</td>
+       <td>origin timestamp</td>
       </tr>
       <tr>
-       <td style="text-align:left;">8</td>
-       <td style="text-align:left;">receive timestamp</td>
+       <td>8</td>
+       <td>receive timestamp</td>
       </tr>
       <tr>
-       <td style="text-align:left;">8</td>
-       <td style="text-align:left;">transmit timestamp</td>
+       <td>8</td>
+       <td>transmit timestamp</td>
       </tr>
       </tbody>
       </table>
+
       <p><span class="ex">Example:</span> timing query/reply</p>
 
       <p class="srv_cli">server &rarr; client</p>
@@ -2871,33 +2740,28 @@ CSeq: 6
       <p>The following DAAP attributes are displayed on Apple TV:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">attribute</th>
-       <th style="text-align:left;">description</th>
+       <th>attribute</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>dmap.itemname</code></td>
-       <td style="text-align:left;">track name</td>
+       <td><code>dmap.itemname</code></td>
+       <td>track name</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>daap.songartist</code></td>
-       <td style="text-align:left;">artist</td>
+       <td><code>daap.songartist</code></td>
+       <td>artist</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>daap.songalbum</code></td>
-       <td style="text-align:left;">album</td>
+       <td><code>daap.songalbum</code></td>
+       <td>album</td>
       </tr>
       </tbody>
       </table>
+
       <p><span class="ex">Example:</span> send track informations</p>
 
       <p class="cli_srv">client &rarr; server</p>
@@ -2959,33 +2823,28 @@ CSeq: 9
       <code>start</code>/<code>curr</code>/<code>end</code>.</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">timestamp</th>
-       <th style="text-align:left;">description</th>
+       <th>timestamp</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>start</code></td>
-       <td style="text-align:left;">beginning of the current track</td>
+       <td><code>start</code></td>
+       <td>beginning of the current track</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>curr</code></td>
-       <td style="text-align:left;">current playback position</td>
+       <td><code>curr</code></td>
+       <td>current playback position</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>end</code></td>
-       <td style="text-align:left;">end of the current track</td>
+       <td><code>end</code></td>
+       <td>end of the current track</td>
       </tr>
       </tbody>
       </table>
+
       <p>The relative position and track duration can be computed as follows:</p>
 
       <ul>
@@ -3124,70 +2983,64 @@ txt:
       available:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">command</th>
-       <th style="text-align:left;">description</th>
+       <th>command</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>beginff</code></td>
-       <td style="text-align:left;">begin fast forward</td>
+       <td><code>beginff</code></td>
+       <td>begin fast forward</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>beginrew</code></td>
-       <td style="text-align:left;">begin rewind</td>
+       <td><code>beginrew</code></td>
+       <td>begin rewind</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>mutetoggle</code></td>
-       <td style="text-align:left;">toggle mute status</td>
+       <td><code>mutetoggle</code></td>
+       <td>toggle mute status</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>nextitem</code></td>
-       <td style="text-align:left;">play next item in playlist</td>
+       <td><code>nextitem</code></td>
+       <td>play next item in playlist</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>previtem</code></td>
-       <td style="text-align:left;">play previous item in playlist</td>
+       <td><code>previtem</code></td>
+       <td>play previous item in playlist</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>pause</code></td>
-       <td style="text-align:left;">pause playback</td>
+       <td><code>pause</code></td>
+       <td>pause playback</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>playpause</code></td>
-       <td style="text-align:left;">toggle between play and pause</td>
+       <td><code>playpause</code></td>
+       <td>toggle between play and pause</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>play</code></td>
-       <td style="text-align:left;">start playback</td>
+       <td><code>play</code></td>
+       <td>start playback</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>stop</code></td>
-       <td style="text-align:left;">stop playback</td>
+       <td><code>stop</code></td>
+       <td>stop playback</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>playresume</code></td>
-       <td style="text-align:left;">play after fast forward or rewind</td>
+       <td><code>playresume</code></td>
+       <td>play after fast forward or rewind</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>shuffle_songs</code></td>
-       <td style="text-align:left;">shuffle playlist</td>
+       <td><code>shuffle_songs</code></td>
+       <td>shuffle playlist</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>volumedown</code></td>
-       <td style="text-align:left;">turn audio volume down</td>
+       <td><code>volumedown</code></td>
+       <td>turn audio volume down</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>volumeup</code></td>
-       <td style="text-align:left;">turn audio volume up</td>
+       <td><code>volumeup</code></td>
+       <td>turn audio volume up</td>
       </tr>
       </tbody>
       </table>
@@ -3231,52 +3084,44 @@ Content-Length: 0
       XML property list with the following properties:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">key</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">value</th>
-       <th style="text-align:left;">description</th>
+       <th>key</th>
+       <th>type</th>
+       <th>value</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;"><code>height</code></td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">720</td>
-       <td style="text-align:left;">vertical resolution</td>
+       <td><code>height</code></td>
+       <td>integer</td>
+       <td>720</td>
+       <td>vertical resolution</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>width</code></td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">1280</td>
-       <td style="text-align:left;">horizontal resolution</td>
+       <td><code>width</code></td>
+       <td>integer</td>
+       <td>1280</td>
+       <td>horizontal resolution</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>overscanned</code></td>
-       <td style="text-align:left;">boolean</td>
-       <td style="text-align:left;">true</td>
-       <td style="text-align:left;">is the display overscanned?</td>
+       <td><code>overscanned</code></td>
+       <td>boolean</td>
+       <td>true</td>
+       <td>is the display overscanned?</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>refreshRate</code></td>
-       <td style="text-align:left;">real</td>
-       <td style="text-align:left;">0.01666&#8230;</td>
-       <td style="text-align:left;">refresh rate 60 Hz (1/60)</td>
+       <td><code>refreshRate</code></td>
+       <td>real</td>
+       <td>0.01666&#8230;</td>
+       <td>refresh rate 60 Hz (1/60)</td>
       </tr>
       <tr>
-       <td style="text-align:left;"><code>version</code></td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">130.14</td>
-       <td style="text-align:left;">server version</td>
+       <td><code>version</code></td>
+       <td>string</td>
+       <td>130.14</td>
+       <td>server version</td>
       </tr>
       </tbody>
       </table>
@@ -3327,70 +3172,63 @@ Content-Length: 411
       <p>The following parameters are sent:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">key</th>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">value</th>
-       <th style="text-align:left;">description</th>
+       <th>key</th>
+       <th>type</th>
+       <th>value</th>
+       <th>description</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-       <td style="text-align:left;">deviceID</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">181221086727016</td>
-       <td style="text-align:left;">MAC address (A4:D1:D2:80:0B:68)</td>
+       <td>deviceID</td>
+       <td>integer</td>
+       <td>181221086727016</td>
+       <td>MAC address (A4:D1:D2:80:0B:68)</td>
       </tr>
       <tr>
-       <td style="text-align:left;">sessionID</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">&#8211;808788724</td>
-       <td style="text-align:left;">session ID (0xcfcadd0c)</td>
+       <td>sessionID</td>
+       <td>integer</td>
+       <td>&#8211;808788724</td>
+       <td>session ID (0xcfcadd0c)</td>
       </tr>
       <tr>
-       <td style="text-align:left;">version</td>
-       <td style="text-align:left;">string</td>
-       <td style="text-align:left;">130.16</td>
-       <td style="text-align:left;">server version</td>
+       <td>version</td>
+       <td>string</td>
+       <td>130.16</td>
+       <td>server version</td>
       </tr>
       <tr>
-       <td style="text-align:left;">param1</td>
-       <td style="text-align:left;">data</td>
-       <td style="text-align:left;">(72 bytes)</td>
-       <td style="text-align:left;">AES key, encrypted with FairPlay</td>
+       <td>param1</td>
+       <td>data</td>
+       <td>(72 bytes)</td>
+       <td>AES key, encrypted with FairPlay</td>
       </tr>
       <tr>
-       <td style="text-align:left;">param2</td>
-       <td style="text-align:left;">data</td>
-       <td style="text-align:left;">(16 bytes)</td>
-       <td style="text-align:left;">AES initialization vector</td>
+       <td>param2</td>
+       <td>data</td>
+       <td>(16 bytes)</td>
+       <td>AES initialization vector</td>
       </tr>
       <tr>
-       <td style="text-align:left;">latencyMs</td>
-       <td style="text-align:left;">integer</td>
-       <td style="text-align:left;">90</td>
-       <td style="text-align:left;">video latency in ms</td>
+       <td>latencyMs</td>
+       <td>integer</td>
+       <td>90</td>
+       <td>video latency in ms</td>
       </tr>
       <tr>
-       <td style="text-align:left;">fpsInfo</td>
-       <td style="text-align:left;">array</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+       <td>fpsInfo</td>
+       <td>array</td>
+       <td></td>
+       <td></td>
       </tr>
       <tr>
-       <td style="text-align:left;">timestampInfo</td>
-       <td style="text-align:left;">array</td>
-       <td style="text-align:left;"></td>
-       <td style="text-align:left;"></td>
+       <td>timestampInfo</td>
+       <td>array</td>
+       <td></td>
+       <td></td>
       </tr>
       </tbody>
       </table>
@@ -3464,67 +3302,58 @@ Content-Length: 503
       Headers start with the following little-endian fields:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">size</th>
-       <th style="text-align:left;">description</th>
+       <th>size</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">4 bytes</td>
-       <td style="text-align:left;">payload size</td>
+       <td>4 bytes</td>
+       <td>payload size</td>
       </tr>
       <tr>
-       <td style="text-align:left;">2 bytes</td>
-       <td style="text-align:left;">payload type</td>
+       <td>2 bytes</td>
+       <td>payload type</td>
       </tr>
       <tr>
-       <td style="text-align:left;">2 bytes</td>
-       <td style="text-align:left;">0x1e if type = 2, else 6</td>
+       <td>2 bytes</td>
+       <td>0x1e if type = 2, else 6</td>
       </tr>
       <tr>
-       <td style="text-align:left;">8 bytes</td>
-       <td style="text-align:left;">NTP timestamp</td>
+       <td>8 bytes</td>
+       <td>NTP timestamp</td>
       </tr>
       </tbody>
       </table>
+
       <p>There are 3 types of packets:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">type</th>
-       <th style="text-align:left;">description</th>
+       <th>type</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">0</td>
-       <td style="text-align:left;">video bitstream</td>
+       <td>0</td>
+       <td>video bitstream</td>
       </tr>
       <tr>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">codec data</td>
+       <td>1</td>
+       <td>codec data</td>
       </tr>
       <tr>
-       <td style="text-align:left;">2</td>
-       <td style="text-align:left;">heartbeat</td>
+       <td>2</td>
+       <td>heartbeat</td>
       </tr>
       </tbody>
       </table>
+
+
       <h3>Codec Data</h3>
 
       <p>This packet contains the H.264 extra data in <em>avcC</em> format (<a href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=55980">ISO/IEC
@@ -3541,88 +3370,82 @@ Content-Length: 503
       <p>The H.264 codec data is interpreted as follows:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">size</th>
-       <th style="text-align:left;">value</th>
-       <th style="text-align:left;">description</th>
+       <th>size</th>
+       <th>value</th>
+       <th>description</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">1 byte</td>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">version</td>
+       <td>1 byte</td>
+       <td>1</td>
+       <td>version</td>
       </tr>
       <tr>
-       <td style="text-align:left;">1 byte</td>
-       <td style="text-align:left;">100</td>
-       <td style="text-align:left;">profile (high)</td>
+       <td>1 byte</td>
+       <td>100</td>
+       <td>profile (high)</td>
       </tr>
       <tr>
-       <td style="text-align:left;">1 byte</td>
-       <td style="text-align:left;">0xc0</td>
-       <td style="text-align:left;">compatibility</td>
+       <td>1 byte</td>
+       <td>0xc0</td>
+       <td>compatibility</td>
       </tr>
       <tr>
-       <td style="text-align:left;">1 byte</td>
-       <td style="text-align:left;">40</td>
-       <td style="text-align:left;">level (4.0)</td>
+       <td>1 byte</td>
+       <td>40</td>
+       <td>level (4.0)</td>
       </tr>
       <tr>
-       <td style="text-align:left;">6 bits</td>
-       <td style="text-align:left;">0x3f</td>
-       <td style="text-align:left;">reserved</td>
+       <td>6 bits</td>
+       <td>0x3f</td>
+       <td>reserved</td>
       </tr>
       <tr>
-       <td style="text-align:left;">2 bits</td>
-       <td style="text-align:left;">3</td>
-       <td style="text-align:left;">NAL units length size - 1</td>
+       <td>2 bits</td>
+       <td>3</td>
+       <td>NAL units length size - 1</td>
       </tr>
       <tr>
-       <td style="text-align:left;">3 bits</td>
-       <td style="text-align:left;">0x7</td>
-       <td style="text-align:left;">reserved</td>
+       <td>3 bits</td>
+       <td>0x7</td>
+       <td>reserved</td>
       </tr>
       <tr>
-       <td style="text-align:left;">5 bits</td>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">number of SPS</td>
+       <td>5 bits</td>
+       <td>1</td>
+       <td>number of SPS</td>
       </tr>
       <tr>
-       <td style="text-align:left;">2 bytes</td>
-       <td style="text-align:left;">16</td>
-       <td style="text-align:left;">length of SPS</td>
+       <td>2 bytes</td>
+       <td>16</td>
+       <td>length of SPS</td>
       </tr>
       <tr>
-       <td style="text-align:left;">16 bytes</td>
-       <td style="text-align:left;">&#8230;</td>
-       <td style="text-align:left;">Sequence parameter set</td>
+       <td>16 bytes</td>
+       <td>&#8230;</td>
+       <td>Sequence parameter set</td>
       </tr>
       <tr>
-       <td style="text-align:left;">1 byte</td>
-       <td style="text-align:left;">1</td>
-       <td style="text-align:left;">number of PPS</td>
+       <td>1 byte</td>
+       <td>1</td>
+       <td>number of PPS</td>
       </tr>
       <tr>
-       <td style="text-align:left;">2 bytes</td>
-       <td style="text-align:left;">4</td>
-       <td style="text-align:left;">length of PPS</td>
+       <td>2 bytes</td>
+       <td>4</td>
+       <td>length of PPS</td>
       </tr>
       <tr>
-       <td style="text-align:left;">4 bytes</td>
-       <td style="text-align:left;">&#8230;</td>
-       <td style="text-align:left;">Picture parameter set</td>
+       <td>4 bytes</td>
+       <td>&#8230;</td>
+       <td>Picture parameter set</td>
       </tr>
       </tbody>
       </table>
+
       <p class="caption">Codec data packet from iPad</p>
 
       <pre><code>0000   1f 00 00 00 01 00 06 00 1d 9a 9f 59 ef de 00 00
@@ -3733,33 +3556,27 @@ Network Time Protocol
       the following:</p>
 
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">service</th>
-       <th style="text-align:left;">realm</th>
-       <th style="text-align:left;">username</th>
+       <th>service</th>
+       <th>realm</th>
+       <th>username</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">AirTunes</td>
-       <td style="text-align:left;"><code>raop</code></td>
-       <td style="text-align:left;"><code>iTunes</code></td>
+       <td>AirTunes</td>
+       <td><code>raop</code></td>
+       <td><code>iTunes</code></td>
       </tr>
       <tr>
-       <td style="text-align:left;">AirPlay</td>
-       <td style="text-align:left;"><code>AirPlay</code></td>
-       <td style="text-align:left;"><code>AirPlay</code></td>
+       <td>AirPlay</td>
+       <td><code>AirPlay</code></td>
+       <td><code>AirPlay</code></td>
       </tr>
       </tbody>
       </table>
+
       <p><span class="ex">Example 1:</span> AirTunes password request</p>
 
       <p class="cli_srv">client &rarr; server</p>
@@ -3848,22 +3665,24 @@ Content-Length: 0
 
       <h1 id="history">8. History</h1>
       <table>
-      <colgroup>
-      <col style="text-align:left;"/>
-      <col style="text-align:left;"/>
-      </colgroup>
-
       <thead>
       <tr>
-       <th style="text-align:left;">Date</th>
-       <th style="text-align:left;">Changes</th>
+       <th>Date</th>
+       <th>Changes</th>
       </tr>
       </thead>
-
       <tbody>
       <tr>
-       <td style="text-align:left;">2012&#8211;03&#8211;20</td>
-       <td style="text-align:left;">Initial version.</td>
+       <td>2012&#8211;03&#8211;20</td>
+       <td>Initial version.</td>
+      </tr>
+      <tr>
+       <td>2019&#8211;04&#8211;30</td>
+       <td>Updated with data from reverse engineering <code>AirPlaySender.framework</code>.</td>
+      </tr>
+      <tr>
+       <td>2019&#8211;05&#8211;01</td>
+       <td>Cleaned up HTML and added a little interactivity.</td>
       </tr>
       </tbody>
       </table>
@@ -3895,8 +3714,11 @@ Content-Length: 0
       </ul>
       <div id="footer">
         &copy; 2012 <a href="mailto:clement.vasseur@gmail.com">Clément Vasseur</a>.
-        Last update: 2012-03-20.
+        &copy; 2019 Brian Olsen.
+        Last update: 2019-05-01.
       </div>
     </div>
+    <script type="text/javascript" src="long.js"></script>
+    <script type="text/javascript" src="features.js"></script>
   </body>
 </html>
