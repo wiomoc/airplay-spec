@@ -498,6 +498,7 @@ txt:
             <option value="0x4A7FCA00,0x4156BD0">HomePod</option>
             <option value="0x445D0A00,  0x1C340">Airport Express</option>
             <option value="0x445F8A00,  0x1C340">Denon AVR-X3500H</option>
+            <option value="0x445C0A00,  0x1C340">Libretone LTH200</option>
             <option value=" 0x4155FDE,      0xE">AirServer</option>
             <option value="0x5A7FFFF7,     0x1E">Airplay</option>
             <option value="0x40180200,    0x300">Required for multi-room audio</option>
@@ -616,12 +617,12 @@ txt:
       <tr id="airplay-features-bit16">
        <td>16</td>
        <td><code>MetadataFeature2</code></td>
-       <td>bit 1 of MetadataFeatures</td>
+       <td>bit 2 of MetadataFeatures</td>
       </tr>
       <tr id="airplay-features-bit17">
        <td>17</td>
        <td><code>MetadataFeature0</code></td>
-       <td>bit 1 of MetadataFeatures</td>
+       <td>bit 0 of MetadataFeatures</td>
       </tr>
       <tr id="airplay-features-bit18">
        <td>18</td>
@@ -863,6 +864,7 @@ Unknown = otherwise
             <option value="0x4">Airport Express</option>
             <option value="0x4">Denon AVR-X3500H</option>
             <option value="0x804">Denon AVR-X3500H Playing Audio</option>
+            <option value="0x484">Libretone LTH200</option>
             <option value="0x4">AirServer</option>
             <option value="0x4">Airplay</option>
           </select>
@@ -3721,7 +3723,10 @@ Content-Length: 0
        <td>2019&#8211;05&#8211;01</td>
        <td>Cleaned up HTML and added a little interactivity.</td>
       </tr>
-      </tbody>
+      <tr>
+       <td>2019&#8211;05&#8211;01</td>
+       <td>Added data for Libretone</td>
+      </tr>
       </table>
       <h1 id="resources">9. Resources</h1>
       <h2 id="resources-ietfrfcs">9.1. IETF RFCs</h2>
