@@ -500,18 +500,23 @@ txt:
         <tr>
         <th colspan="3">
           Examples:
-          <select id="airplay-features-examples" onchange="featuresExample(this)">
+          <select id="airplay-features-examples">
             <option value="">Custom</option>
             <option value="0x4A7FFFF7,0x4155FDE">4K Apple TV</option>
             <option value="0x4A7FCA00,0x4156BD0">HomePod</option>
             <option value="0x445D0A00,  0x1C340">Airport Express</option>
             <option value="0x445F8A00,  0x1C340">Denon AVR-X3500H</option>
+            <option value="0x445F8A00,  0x1C340">Denon AVR-X1400H</option>
+            <option value="0x445F8A00,  0x1C340">Denon AVR-X4400H</option>
             <option value="0x445C0A00,  0x1C340">Libretone LTH200</option>
+            <option value="0x445C0A00,  0x1C340">Libretone LTH200</option>
+            <option value="0x445F8A00,  0x1C340">Sonos Beam</option>
+            <option value="0x445F8A00,  0x1C340">Sonos One</option>
             <option value=" 0x4155FDE,      0xE">AirServer</option>
             <option value="0x5A7FFFF7,     0x1E">Airplay</option>
             <option value="0x40180200,    0x300">Required for multi-room audio</option>
           </select>
-          <input type="text" id="airplay-features-input" onkeyup="featuresChanged(this)" onpaste="featuresChanged(this)">
+          <input type="text" id="airplay-features-input">
         </th>
         <tr>
       </tbody>
@@ -860,7 +865,7 @@ Unknown = otherwise
         <tr>
         <th colspan="3">
           Examples:
-          <select id="airplay-system-flags-examples" onchange="systemFlagsExample(this)">
+          <select id="airplay-system-flags-examples">
             <option value="">Custom</option>
             <option value="0x10644">4K Apple TV Not playing</option>
             <option value="0x30e44">4K Apple TV receiving AirPlay audio</option>
@@ -872,11 +877,15 @@ Unknown = otherwise
             <option value="0x4">Airport Express</option>
             <option value="0x4">Denon AVR-X3500H</option>
             <option value="0x804">Denon AVR-X3500H Playing Audio</option>
+            <option value="0x4">Denon AVR-X1400H</option>
+            <option value="0x4">Denon AVR-X4400H</option>
             <option value="0x484">Libretone LTH200</option>
+            <option value="0x404">Sonos Beam</option>
+            <option value="0x404">Sonos One</option>
             <option value="0x4">AirServer</option>
             <option value="0x4">Airplay</option>
           </select>
-          <input type="text" id="airplay-system-flags-input" onkeyup="systemFlagsChanged(this)" onpaste="systemFlagsChanged(this)">
+          <input type="text" id="airplay-system-flags-input">
         </th>
         <tr>
       </tbody>
@@ -3807,6 +3816,10 @@ tar czvf device-data.tar.gz mDNS.txt RTSP-get-info-res*
        <td>2019&#8211;05&#8211;01</td>
        <td>Add contributing section</td>
       </tr>
+      <tr>
+       <td>2019&#8211;05&#8211;02</td>
+       <td>Add more example devices and click on flag to change</td>
+      </tr>
       </table>
       <h1 id="resources">10. Resources</h1>
       <h2 id="resources-ietfrfcs">10.1. IETF RFCs</h2>
@@ -3837,7 +3850,7 @@ tar czvf device-data.tar.gz mDNS.txt RTSP-get-info-res*
       <div id="footer">
         &copy; 2012 <a href="mailto:clement.vasseur@gmail.com">Clément Vasseur</a>.
         &copy; 2019 <a href="mailto:brian@maven-group.org">Brian Olsen</a>.
-        Last update: 2019-05-01.
+        Last update: 2019-05-02.
       </div>
     </div>
     <script type="text/javascript" src="long.js"></script>
