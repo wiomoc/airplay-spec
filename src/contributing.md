@@ -29,7 +29,7 @@ avahi-browse -prt _airplay._tcp | awk -v "FS=;" '{ print $7 }' | sed '/^\s*$/d' 
 avahi-browse -aprt | grep -f devices.txt > mDNS.txt
 for host in $(cat devices.txt) ; do
 PORT="$(avahi-browse -prt _airplay._tcp | grep ";$host;" | awk -v "FS=;" '{print $9}' | sed '/^\s*$/d')"
-curl https://open-airplay.github.io/airplay-spec/data/RTSP-get-info-req.bin | nc -w 2 "$host" $PORT > "RTSP-get-info-res-$host.bin"
+curl https://openairplay.github.io/airplay-spec/data/RTSP-get-info-req.bin | nc -w 2 "$host" $PORT > "RTSP-get-info-res-$host.bin"
 done
 tar czvf device-data.tar.gz mDNS.txt RTSP-get-info-res*
 ```
@@ -53,7 +53,7 @@ replace `[ip address]`, `[port]` and `[device name]` with the correct values.
 
 
 ```bash
-curl https://open-airplay.github.io/airplay-spec/data/RTSP-get-info-req.bin | nc -w 2 [ip address] [port] > RTSP-get-info-res-[device name].bin
+curl https://openairplay.github.io/airplay-spec/data/RTSP-get-info-req.bin | nc -w 2 [ip address] [port] > RTSP-get-info-res-[device name].bin
 ```
 
 
