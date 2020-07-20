@@ -27,6 +27,7 @@
     - [POST /audioMode](./audio/rtsp_requests/post_audio_mode.md)
     - [RECORD](./audio/rtsp_requests/record.md)
     - [FLUSH](./audio/rtsp_requests/flush.md)
+    - [FLUSHBUFFERED](./audio/rtsp_requests/flushbuffered.md)
     - [TEARDOWN](./audio/rtsp_requests/teardown.md)
   - [RTP Streams](./audio/rtp_streams.md)
   - [Volume Control](./audio/volume_control.md)
