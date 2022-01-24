@@ -20,27 +20,27 @@
 | 15|MetadataFeature1|bit 1 of MetadataFeatures. Artwork.|
 | 16|MetadataFeature2|bit 2 of MetadataFeatures. Progress. |
 | 17|MetadataFeature0|bit 0 of MetadataFeatures. Text. |
-| 18|AudioFormat1|support for audio format 1|
+| 18|AudioFormat1|support for audio format 1 (PCM)|
 | 19|AudioFormat2|support for audio format 2. This bit must be set for AirPlay 2 connection to work|
-| 20|AudioFormat3|support for audio format 3. This bit must be set for AirPlay 2 connection to work|
+| 20|AudioFormat3|support for audio format 3 (AAC-LC). This bit must be set for AirPlay 2 connection to work|
 | 21|AudioFormat4|support for audio format 4|
-| 22|||
+| 22|AudioUnencrypted||
 | 23|Authentication1|Authentication type 1. RSA Authentication|
 | 24|||
 | 25|||
-| 26|HasUnifiedAdvertiserInfo||
+| 26|AudioMFiSAPv1Encrypted|Audio encrypted with AES-128 / MFi SAP v1|
 | 27|SupportsLegacyPairing||
 | 28|||
 | 29|||
 | 30|RAOP|RAOP is supported on this port. With this bit set your don't need the AirTunes service|
-| 31|||
+| 31|Reserved||
 | 32|IsCarPlay / SupportsVolume|Don’t read key from `pk` record it is known|
 | 33|SupportsAirPlayVideoPlayQueue||
 | 34|SupportsAirPlayFromCloud||
 | 35|||
 | 36|||
-| 37|||
-| 38|SupportsCoreUtilsPairingAndEncryption| `SupportsHKPairingAndAccessControl`, `SupportsSystemPairing` and `SupportsTransientPairing` implies `SupportsCoreUtilsPairingAndEncryption`|
+| 37|CarPlayControl||
+| 38|SupportsCoreUtilsPairingAndEncryption|`SupportsHKPairingAndAccessControl`, `SupportsSystemPairing` and `SupportsTransientPairing` implies `SupportsCoreUtilsPairingAndEncryption`|
 | 39|||
 | 40|SupportsBufferedAudio|Bit needed for device to show as supporting multi-room audio|
 | 41|SupportsPTP|Bit needed for device to show as supporting multi-room audio|
